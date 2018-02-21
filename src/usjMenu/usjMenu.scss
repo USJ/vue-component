@@ -1,0 +1,127 @@
+@import '../../style/material/variables.scss';
+@import '../../style/elevation';
+
+$menu-base-width: 56px;
+
+.usj-menu {
+  display: inline-block;
+}
+
+.usj-menu-content {
+  @include elevate(2);
+
+  width: $menu-base-width * 3;
+  min-width: $menu-base-width * 1.5;
+  max-width: $menu-base-width * 7;
+  min-height: 64px;
+  max-height: calc(100vh - 32px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  z-index: 131;
+  transform: scale(.9, .85) translateZ(0);
+  border-radius: 2px;
+  opacity: 0;
+  transition: width $swift-ease-out-duration $swift-ease-out-timing-function,
+              opacity .3s $swift-ease-in-timing-function,
+              margin .3s $swift-ease-in-timing-function,
+              transform 0s .4s $swift-ease-in-timing-function;
+  will-change: transform, opacity, width;
+
+  background: white;
+  & * {
+    outline: none;
+  }
+
+  &.usj-direction-bottom-right {
+    margin-top: -20px;
+    margin-left: -8px;
+    transform-origin: top left;
+
+    &.usj-active {
+      margin-top: -11px;
+    }
+  }
+
+  &.usj-direction-bottom-left {
+    margin-top: -20px;
+    margin-left: 8px;
+    transform-origin: top right;
+
+    &.usj-active {
+      margin-top: -11px;
+    }
+  }
+
+  &.usj-direction-top-right {
+    margin-top: 20px;
+    margin-left: -8px;
+    transform-origin: bottom left;
+
+    &.usj-active {
+      margin-top: 11px;
+    }
+  }
+
+  &.usj-direction-top-left {
+    margin-top: 20px;
+    margin-left: 8px;
+    transform-origin: bottom right;
+
+    &.usj-active {
+      margin-top: 11px;
+    }
+  }
+
+  &.usj-align-trigger {
+    margin: 0;
+  }
+
+  &.usj-size-1 {
+    width: $menu-base-width * 1.5;
+  }
+
+  @for $i from 2 through 7 {
+    &.usj-size-#{$i} {
+      width: $menu-base-width * $i;
+    }
+  }
+
+  &.usj-active {
+    pointer-events: auto;
+    opacity: 1;
+    transform: scale(1) translateZ(0);
+    transition: width $swift-ease-out-duration $swift-ease-out-timing-function,
+                opacity .4s $swift-ease-out-timing-function,
+                transform .3s $swift-ease-out-timing-function;
+
+    .usj-list {
+      opacity: 1;
+      transition: opacity .3s $swift-ease-out-timing-function;
+    }
+  }
+
+  .usj-list {
+    opacity: 0;
+    transition: opacity .3s $swift-ease-out-timing-function;
+  }
+}
+
+.usj-menu-item {
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1.2em;
+
+  &[disabled] {
+    cursor: default;
+  }
+
+  .usj-list-item-holder {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.usj-backdrop.usj-menu-backdrop {
+  z-index: 130;
+}

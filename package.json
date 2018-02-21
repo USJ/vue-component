@@ -1,0 +1,20 @@
+{
+  "name": "vue-components",
+  "version": "1.0.0",
+  "description": "VueJS components used internally by USJ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/USJ/vue-components.git",
+  "keywords": ["USJ"],
+  "author": "Marco Leong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/USJ/vue-components/issues"
+  },
+  "homepage": "https://github.com/USJ/vue-components#readme",
+  "devDependencies": {
+    "bili": "^2.2.7"
+  }
+}

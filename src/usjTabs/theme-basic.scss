@@ -1,0 +1,40 @@
+.usj-tabs.basic{
+  margin-top: 20px;
+
+  button {
+    border-radius: 0;
+  }
+
+  .usj-tabs-content{
+    margin-top:2%;
+  }
+
+  .usj-tabs-navigation{
+    border-bottom:0;
+  }
+
+  .usj-tab-header{
+    background:var(--white);
+    color:var(--darkgray1);
+    width:100%;
+    height:170%;
+    font-size:18px;
+  }
+
+  .usj-tab-header:hover{
+    background:var(--lightgray2);
+  }
+
+  .usj-tab-header.usj-active {
+    border-bottom:0;
+    background:var(--lightgray2);
+    box-shadow:inset 0 2px 4px rgba(0, 0, 0, .16);
+  }
+
+  .usj-tabs-wrapper{
+    .usj-tab{
+      background:var(--lightgray2);
+      padding:16px 0;
+    }
+  }
+}
