@@ -1,13 +1,17 @@
 {
   "name": "@usj/vue-components",
-  "version": "1.0.0",
+  "version": "1.0.0-dev",
   "description": "VueJS components used internally by USJ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bundle": "bili index.js --plugin vue",
+    "play": "poi --config play.config.js",
+    "build:play": "poi build --config play.config.js"
   },
   "repository": "git+https://github.com/USJ/vue-components.git",
-  "keywords": ["USJ"],
+  "keywords": [
+    "USJ"
+  ],
   "author": "Marco Leong",
   "license": "MIT",
   "bugs": {
@@ -15,6 +19,27 @@
   },
   "homepage": "https://github.com/USJ/vue-components#readme",
   "devDependencies": {
-    "bili": "^2.2.7"
+    "ag-grid": "^16.0.1",
+    "ag-grid-vue": "^16.0.0",
+    "flatpickr": "^4.3.2",
+    "material-design-icons": "^3.0.1",
+    "play": "^0.5.0",
+    "poi": "^9.6.13",
+    "rollup-plugin-vue": "^3.0.0",
+    "sass-loader": "^6.0.6",
+    "stylus-loader": "^3.0.1",
+    "vue-play": "^3.2.1",
+    "vue-template-compiler": "^2.5.13"
+  },
+  "dependencies": {
+    "autosize": "^4.0.0",
+    "element.scrollintoviewifneeded-polyfill": "^1.0.1"
+  },
+  "peerDependencies": {
+    "ag-grid": "^16.0.1",
+    "flatpickr": "^4.3.2",
+    "material-design-icons": "^3.0.1",
+    "sass-loader": "^6.0.6",
+    "stylus-loader": "^3.0.1"
   }
 }

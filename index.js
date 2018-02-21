@@ -1,3 +1,7 @@
-import install from 'src/install.js';
+import * as UsjComponents from './src/components/index.js'
 
-export default install;
+export default Vue => {
+  Object.values(UsjComponents).forEach(Component => {
+    Vue.use(Component)
+  })
+}

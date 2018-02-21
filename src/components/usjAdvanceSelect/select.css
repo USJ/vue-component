@@ -1,0 +1,170 @@
+@import '../../style/variables.css';
+
+.usj-select {
+  width: 100%;
+  position: relative;
+  //background-color: red;
+  &.is-disabled {
+    cursor: not-allowed;
+
+    .usj-select__control {
+      cursor: not-allowed;
+      background: color(white blackness(30%));
+    }
+  }
+
+  &__control {
+    position: relative;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0.2em;
+  }
+
+  &__value {
+    position: absolute 0;
+
+    max-width: 100%;
+    padding: 0 34px 0 10px;
+    line-height: 34px;
+  }
+
+  &__multiple-value {
+    position: absolute 0;
+
+    .is-multiple & {
+      display: inline-block;
+      position: inherit;
+    }
+
+    .item {
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 0.2em;
+      margin-left: 0.2em;
+      margin-top: 0.2em;
+
+      &__label {
+        display: inline;
+        padding: 4px 2px 4px 5px;
+        line-height: 1.1em;
+        vertical-align: middle;
+      }
+
+      &__remove {
+        display: inline;
+        cursor: pointer;
+        border-left: 1px solid #ccc;
+        padding-bottom: 2px;
+        & > i {
+          font-size: 100%;
+          margin-right: -4px;
+          margin-left: 3px;
+        }
+      }
+    }
+  }
+
+  &__clear {
+    position: absolute 15% 2em 0 auto;
+    cursor: pointer;
+
+    z-index: 1;
+    //font-size: 50%;
+
+    &:hover {
+      color: blue;
+    }
+  }
+
+  &__dropdown {
+    position: absolute 20% 0.5em 0 auto;
+    cursor: pointer;
+  }
+
+  &__placeholder {
+    position: absolute 0;
+
+    max-width: 100%;
+    padding: 0 34px 0 10px;
+    line-height: 34px;
+  }
+
+  &__input {
+    .is-multiple & {
+      display: inline-block;
+      position: inherit;
+
+      input {
+        display: inline;
+      }
+      .placeholder {
+        display: inline;
+      }
+    }
+
+    & input:focus {
+      outline: none;
+    }
+
+    .placeholder {
+      .is-searchable & {
+        display: none;
+      }
+
+      height: 2em;
+    }
+
+    input,
+    .placeholder {
+      border: 0;
+      line-height: 34px;
+
+      font-size: 1em;
+      padding-left: 10px;
+    }
+  }
+
+  &__menu-wrapper {
+    z-index: 30;
+    position: absolute;
+    background: white;
+    width: 100%;
+    //display: none;
+  }
+
+  &__menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    border-radius: 0.2em;
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 1px;
+    max-height: 250px;
+
+    overflow-y: scroll;
+  }
+
+  &__menu-item {
+    cursor: pointer;
+    padding: 0.5em;
+    z-index: 1;
+
+    &_disable_option {
+      background: lightgrey;
+      display: inline-flex;
+      width: 100%;
+      padding: 10px;
+    }
+
+    &:hover {
+      background: color(white blackness(10%));
+    }
+
+    &.highlighted {
+      background: color(white blackness(5%));
+    }
+  }
+}

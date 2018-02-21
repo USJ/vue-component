@@ -1,0 +1,82 @@
+// USJ only color
+$usj-theme-orange: #ff5200;
+$usj-theme-dark: #37475c;
+$usj-theme-grey: #adacad;
+$usj-text-color: #626262;
+
+$color-background-button-default: #ffffff;
+$color-button-default: $usj-text-color;
+$color-background-button-primary: $usj-theme-orange;
+$color-button-primary: #ffffff;
+
+// Fonts
+$usj-font-family: 'Avenir', Helvetica, Arial, sans-serif;
+$font-family: $usj-font-family;
+$mdc-typography-font-family: 'Avenir', Helvetica, Arial, sans-serif;
+
+// MDC color
+$mdc-theme-primary: #9c27b0;
+$mdc-theme-accent: #ff5200; // USJ orange color
+$mdc-theme-background: #fff;
+
+$breakpoint-xsmall: 600px !default;
+$breakpoint-small: 960px !default;
+$breakpoint-medium: 1280px !default;
+$breakpoint-large: 1920px !default;
+
+/* Transitions - Based on Angular Material */
+
+$swift-ease-out-duration: 0.4s !default;
+$swift-ease-out-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1) !default;
+$swift-ease-out: all $swift-ease-out-duration $swift-ease-out-timing-function
+  !default;
+
+$swift-ease-in-duration: 0.3s !default;
+$swift-ease-in-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2) !default;
+$swift-ease-in: all $swift-ease-in-duration $swift-ease-in-timing-function
+  !default;
+
+$swift-ease-in-out-duration: 0.5s !default;
+$swift-ease-in-out-timing-function: cubic-bezier(0.35, 0, 0.25, 1) !default;
+$swift-ease-in-out: all $swift-ease-in-out-duration
+  $swift-ease-in-out-timing-function !default;
+
+$swift-linear-duration: 0.15s !default;
+$swift-linear-timing-function: linear !default;
+$swift-linear: all $swift-linear-duration $swift-linear-timing-function !default;
+
+/* DATA TABLE */
+
+$data-table-font-size: 13px !default;
+$data-table-header-font-size: 12px !default;
+$data-table-header-sort-icon-size: 16px !default;
+
+$data-table-header-color: rgba(#000, 0.54) !default;
+$data-table-header-sorted-color: rgba(#000, 0.87) !default;
+$data-table-header-sorted-icon-hover-color: rgba(#000, 0.26) !default;
+$data-table-divider-color: rgba(#000, 0.12) !default;
+
+$data-table-hover-color: #eeeeee !default;
+$data-table-selection-color: #e0e0e0 !default;
+
+$data-table-dividers: 1px solid $data-table-divider-color !default;
+
+$data-table-row-height: 48px !default;
+$data-table-last-row-height: 56px !default;
+$data-table-header-height: 56px !default;
+
+$data-table-column-spacing: 36px !default;
+$data-table-column-padding: $data-table-column-spacing / 2;
+
+$data-table-card-header-height: 64px !default;
+$data-table-card-title-top: 20px !default;
+$data-table-card-padding: 24px !default;
+$data-table-button-padding-right: 16px !default;
+$data-table-cell-top: $data-table-card-padding / 2;
+
+/* Responsive Breakpoints */
+
+$breakpoint-xsmall: 600px !default;
+$breakpoint-small: 960px !default;
+$breakpoint-medium: 1280px !default;
+$breakpoint-large: 1920px !default;

@@ -1,0 +1,98 @@
+@import '../../style/variables.css';
+
+:root {
+  --color-background-default: var(--usj-theme-grey);
+
+  --chip-height: 32px;
+  --chip-icon-size: 24px;
+  --chip-icon-font: var(--chip-icon-size) - 4px;
+}
+
+.usj-chip {
+  height: var(--chip-height);
+  padding: 8px 12px;
+  display: inline-block;
+  border-radius: var(--chip-height);
+  transition: var(--swift-ease-out);
+  font-size: 13px;
+  line-height: 16px;
+  white-space: nowrap;
+
+  background-color: var(--color-background-default);
+  color: var(--color-text-invered);
+
+  &.usj-deletable {
+    position: relative;
+    padding-right: 32px;
+  }
+
+  &.usj-editable {
+    .usj-chip-container {
+      cursor: pointer;
+    }
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+
+    &:not(.usj-disabled) {
+      cursor: pointer;
+      box-shadow: var(--box-shadow-elevate-2);
+    }
+  }
+
+  &.usj-disabled {
+    .usj-button {
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+
+  .usj-button.usj-delete {
+    width: var(--chip-icon-size);
+    min-width: var(--chip-icon-size);
+    height: var(--chip-icon-size);
+    min-height: var(--chip-icon-size);
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    border-radius: var(--chip-icon-size);
+    transition: var(--swift-ease-out);
+
+    .usj-icon {
+      width: var(--chip-icon-font);
+      min-width: var(--chip-icon-font);
+      height: var(--chip-icon-font);
+      min-height: var(--chip-icon-font);
+      margin: 0;
+      font-size: var(--chip-icon-font);
+    }
+
+    .usj-ink-ripple {
+      border-radius: var(--chip-height);
+    }
+
+    .usj-ripple {
+      opacity: 0.54;
+    }
+  }
+}
+
+.usj-chips {
+  min-height: 54px;
+  display: flex;
+  flex-wrap: wrap;
+
+  .usj-chip {
+    margin-right: 8px;
+    margin-bottom: 4px;
+  }
+
+  .usj-input {
+    width: 128px;
+    flex: 1;
+  }
+}
