@@ -1,5 +1,5 @@
 {
-  "name": "vue-components",
+  "name": "@usj/vue-components",
   "version": "1.0.0",
   "description": "VueJS components used internally by USJ",
   "main": "index.js",
