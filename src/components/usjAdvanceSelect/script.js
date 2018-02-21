@@ -33,7 +33,7 @@ export default {
     id: String,
     name: String
   },
-  data () {
+  data() {
     return {
       searchValue: '',
       singleItem: {},
@@ -47,46 +47,48 @@ export default {
     }
   },
   watch: {
-    multipleItems (newVal) {
+    multipleItems(newVal) {
       console.debug('Multiple Items ', newVal)
     },
-    singleItem (newVal) {
+    singleItem(newVal) {
       console.debug('Single Items ', newVal)
     },
-    value (val) {
+    value(val) {
       if (val) {
         this.updateLocalValue()
       }
     },
-    options (val) {
+    options(val) {
       this.menuItems = val
     }
   },
   computed: {
-    rootClasses () {
+    rootClasses() {
       return {
         'is-disabled': this.disabled,
         'is-multiple': this.multiple,
         'is-searchable': this.searchable
       }
     },
-    hasSelected () {
+    hasSelected() {
       if (this.multiple) {
         return this.multipleItems.length > 0
       }
 
       return this.singleItem !== {}
     },
-    hasDefaultSlot () {
+    hasDefaultSlot() {
       return !!this.$scopedSlots.default
     },
-    singleLabel () {
+    singleLabel() {
       if (this.multiple) {
         return
       }
 
       if (this.options.length > 0) {
-        const item = this.options.filter(option => option.value === this.singleItem)[0]
+        const item = this.options.filter(
+          option => option.value === this.singleItem
+        )[0]
 
         if (!item) {
           return
@@ -97,31 +99,29 @@ export default {
 
       return this.singleItem
     },
-    hasOptions () {
+    hasOptions() {
       return this.options.length > 0
     }
   },
   methods: {
-    clear (e) {
-      this.doSelectItem(
-        this.multiple ? [] : {}
-      )
+    clear(e) {
+      this.doSelectItem(this.multiple ? [] : {})
 
       this.togglePlaceholderEl(true)
     },
-    getLabel (value) {
+    getLabel(value) {
       if (this.hasOptions) {
         return this.options.filter(option => option.value === value)[0].label
       }
     },
 
-    handleMenuItemMouseOver (item, index) {
+    handleMenuItemMouseOver(item, index) {
       this.highlightIdx = index
     },
-    handleMenuItemClick (item) {
+    handleMenuItemClick(item) {
       this.doSelectItem(item)
     },
-    doSelectItem (item) {
+    doSelectItem(item) {
       const value = this.isOptionObject(item) ? item.value : item
 
       if (this.multiple) {
@@ -137,7 +137,7 @@ export default {
 
       this.updateValue(this.getUpdateValue())
     },
-    addItem (newItem) {
+    addItem(newItem) {
       const hasDuplicate = this.multipleItems.some(item => {
         return newItem === item
       })
@@ -148,12 +148,12 @@ export default {
         this.multipleItems.push(newItem)
       }
     },
-    removeItem (item, index) {
+    removeItem(item, index) {
       this.multipleItems.splice(index, 1)
       console.debug(this.getUpdateValue())
       this.updateValue(this.getUpdateValue())
     },
-    handleInputBlur () {
+    handleInputBlur() {
       this.searchValue = ''
       this.toggleValueEl(true)
       this.toggleMenuEl(false)
@@ -163,7 +163,7 @@ export default {
         this.togglePlaceholderEl(true)
       }
     },
-    handleInputInput (e) {
+    handleInputInput(e) {
       if (this.searchValue) {
         if (!this.multiple) {
           this.toggleValueEl(false)
@@ -172,8 +172,12 @@ export default {
       }
 
       if (this.options.length > 0 && this.searchValue) {
-        this.menuItems = this.options
-          .filter(item => JSON.stringify(item).toLowerCase().indexOf(this.searchValue.toLowerCase()) > -1)
+        this.menuItems = this.options.filter(
+          item =>
+            JSON.stringify(item)
+              .toLowerCase()
+              .indexOf(this.searchValue.toLowerCase()) > -1
+        )
       }
 
       if (this.fetchFunction && this.searchValue) {
@@ -181,22 +185,21 @@ export default {
       }
     },
 
-    fetchMenuItems: debounce(function () {
+    fetchMenuItems: debounce(function() {
       this.loading = true
-      this.fetchFunction(this.searchValue)
-        .then(data => {
-          console.debug('Fetch function ', data)
-          this.menuItems = data
-          this.loading = false
-        })
+      this.fetchFunction(this.searchValue).then(data => {
+        console.debug('Fetch function ', data)
+        this.menuItems = data
+        this.loading = false
+      })
     }, 1000),
 
-    handleInputFocus (e) {
+    handleInputFocus(e) {
       this.toggleMenuEl(true)
       this.togglePlaceholderEl(false)
     },
 
-    handleControlClick (e) {
+    handleControlClick(e) {
       if (this.disabled) {
         return
       }
@@ -208,16 +211,16 @@ export default {
         this.togglePlaceholderEl(false)
       }
     },
-    toggleMenuEl (show) {
+    toggleMenuEl(show) {
       this.showMenuEl = show
     },
-    toggleValueEl (show) {
+    toggleValueEl(show) {
       this.showValueEl = show
     },
-    togglePlaceholderEl (show) {
+    togglePlaceholderEl(show) {
       this.showPlaceholderEl = show
     },
-    handleUpKey () {
+    handleUpKey() {
       let idx = this.highlightIdx - 1
 
       if (this.highlightIdx < 0 || idx < 0) {
@@ -226,7 +229,7 @@ export default {
         this.highlightIdx = idx
       }
     },
-    handleDownKey () {
+    handleDownKey() {
       let idx = this.highlightIdx + 1
       let length = this.menuItems.length
 
@@ -236,51 +239,56 @@ export default {
         this.highlightIdx = idx
       }
     },
-    handleEnterKey () {
+    handleEnterKey() {
       this.doSelectItem(this.menuItems[this.highlightIdx])
     },
-    updateLocalValue () {
+    updateLocalValue() {
       // handle multiple
       if (this.multiple) {
         if (!isArray(this.value)) {
-          console.error(`v-model has to be Array for multiple, ${typeof this.value} given`)
+          console.error(
+            `v-model has to be Array for multiple, ${typeof this.value} given`
+          )
         }
 
         this.value.forEach(item => this.addItem(item))
       } else {
         if (this.options.length > 0) {
           this.doSelectItem(
-            this.menuItems
-              .filter(item => item.value === this.value)[0]
+            this.menuItems.filter(item => item.value === this.value)[0]
           )
         }
 
         if (this.fetchFunction) {
           if (!isPlainObject(this.value)) {
-            console.error('fetchFunction cannot be used without `v-model` as object')
+            console.error(
+              'fetchFunction cannot be used without `v-model` as object'
+            )
           }
 
           this.doSelectItem(this.value)
         }
       }
     },
-    getUpdateValue () {
+    getUpdateValue() {
       if (this.multiple) {
         return this.multipleItems
       }
 
-      return this.isOptionObject(this.singleItem) ? this.singleItem.value : this.singleItem
+      return this.isOptionObject(this.singleItem)
+        ? this.singleItem.value
+        : this.singleItem
     },
-    updateValue (value) {
+    updateValue(value) {
       this.$emit('input', value)
 
       this.togglePlaceholderEl(!this.hasSelected)
     },
-    isOptionObject (object) {
+    isOptionObject(object) {
       return has(object, 'label') && has(object, 'value')
     }
   },
-  mounted () {
+  mounted() {
     console.log('Mounted v-advs')
 
     if (this.options) {

@@ -3,7 +3,7 @@
 .usj-select {
   width: 100%;
   position: relative;
-  //background-color: red;
+  /* //background-color: red; */
   &.is-disabled {
     cursor: not-allowed;
 

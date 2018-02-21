@@ -1,5 +1,5 @@
-import Select from './Select.vue'
+import usjAdvanceSelect from './usjAdvanceSelect.vue'
 
-export default function install (Vue) {
-  Vue.component('usj-advance-select', Select)
+export default function install(Vue) {
+  Vue.component('usj-advance-select', usjAdvanceSelect)
 }

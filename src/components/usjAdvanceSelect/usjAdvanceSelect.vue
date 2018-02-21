@@ -65,5 +65,6 @@
 </template>
 
 <script src="./script.js"></script>
-<style type="postcss" src="./select.css">
+<style type="postcss" src="./usjAdvanceSelect.css">
+
 </style>
