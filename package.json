@@ -1,6 +1,6 @@
 {
   "name": "@usj/vue-components",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "VueJS components used internally by USJ",
   "main": "index.js",
   "scripts": {
