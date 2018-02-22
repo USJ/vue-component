@@ -72,7 +72,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="postcss">
 .usj-autocomplete {
   position: relative;
 
