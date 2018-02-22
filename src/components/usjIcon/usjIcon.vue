@@ -11,8 +11,6 @@
 <style lang="scss" src="./usjIcon.scss"></style>
 
 <script>
-  require('material-design-icons/iconfont/material-icons.css')
-
   let registeredIcons = {}
 
   export default {
