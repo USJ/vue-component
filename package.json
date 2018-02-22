@@ -1,6 +1,6 @@
 {
   "name": "@usj/vue-components",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "VueJS components used internally by USJ",
   "main": "index.js",
   "scripts": {
@@ -9,9 +9,7 @@
     "build:play": "poi build --config play.config.js"
   },
   "repository": "git+https://github.com/USJ/vue-components.git",
-  "keywords": [
-    "USJ"
-  ],
+  "keywords": ["USJ"],
   "author": "Marco Leong",
   "license": "MIT",
   "bugs": {
