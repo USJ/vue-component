@@ -9,7 +9,9 @@
     "build:play": "poi build --config play.config.js"
   },
   "repository": "git+https://github.com/USJ/vue-components.git",
-  "keywords": ["USJ"],
+  "keywords": [
+    "USJ"
+  ],
   "author": "Marco Leong",
   "license": "MIT",
   "bugs": {
@@ -30,20 +32,19 @@
     "postcss-nested": "^3.0.0",
     "rollup-plugin-vue": "^3.0.0",
     "rucksack-css": "^1.0.2",
-    "sass-loader": "^6.0.6",
     "stylus-loader": "^3.0.1",
     "vue-play": "^3.2.1",
     "vue-template-compiler": "^2.5.13"
   },
   "dependencies": {
     "autosize": "^4.0.0",
-    "element.scrollintoviewifneeded-polyfill": "^1.0.1"
+    "element.scrollintoviewifneeded-polyfill": "^1.0.1",
+    "stylus": "^0.54.5"
   },
   "peerDependencies": {
     "ag-grid": "^16.0.1",
     "flatpickr": "^4.3.2",
     "material-design-icons": "^3.0.1",
-    "sass-loader": "^6.0.6",
     "stylus-loader": "^3.0.1"
   }
 }
