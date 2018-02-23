@@ -10,7 +10,7 @@
     "play": "poi --config play.config.js",
     "build:play": "poi build --config play.config.js",
     "release:prerelease":
-      "npm run bundle && npm version prerelease -m 'Bump version' && npm publish"
+      "npm version prerelease -m 'Bump version' && npm publish"
   },
   "repository": "git+https://github.com/USJ/vue-components.git",
   "keywords": ["USJ"],
