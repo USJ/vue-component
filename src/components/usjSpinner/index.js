@@ -1,7 +1,7 @@
 require('./usjSpinner.css')
 
 function range(begin, end) {
-  Array.from(new Array(end), (val, index) => index + begin)
+  return Array.from(new Array(end), (val, index) => index + begin)
 }
 
 const usjSpinner = {
