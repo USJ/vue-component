@@ -2892,7 +2892,7 @@ function install$20(Vue) {
 require('./usjSpinner.css');
 
 function range(begin, end) {
-  
+  return Array.from(new Array(end), function (val, index) { return index + begin; });
 }
 
 var usjSpinner = {
