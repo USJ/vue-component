@@ -1307,10 +1307,6 @@ var usjFile = { render: function () {
   methods: {
     getMultipleName: function getMultipleName(files) {
       var names = [];
-      console.log(files);
-      //        [...files].forEach((file) => {
-      //          names.push(file.name)
-      //        })
       return names.join(', ');
     },
     openPicker: function openPicker() {

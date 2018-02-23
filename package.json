@@ -6,7 +6,7 @@
   "module": "dist/@usj/vue-component.es.js",
   "scripts": {
     "bundle":
-      "bili src/components/index.js --plugin vue,node-resolve,postcss --format cjs --format es",
+      "bili src/components/index.js --plugin vue,node-resolve --format cjs --format es",
     "play": "poi --config play.config.js",
     "build:play": "poi build --config play.config.js",
     "release:prerelease":
