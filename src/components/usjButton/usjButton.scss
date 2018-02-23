@@ -161,6 +161,18 @@ $button-font-size: 14px;
       height: 30px;
     }
 
+    &.usj-inverse {
+      background: #969696;
+      color: white;
+      min-width: 36px;
+      width: 36px;
+      height: 30px;
+
+      &:hover {
+        background: #ff5520;
+      }
+    }
+
     &.usj-dense {
       width: $button-dense-height;
       min-width: $button-dense-height;
