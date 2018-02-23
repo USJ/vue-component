@@ -10,7 +10,7 @@ export default {
     href: String,
     disabled: Boolean
   },
-  render (createElement, { children, data, props }) {
+  render(createElement, { children, data, props }) {
     const getItemComponent = () => {
       const on = data.on
       const interactionEvents = [
@@ -62,6 +62,10 @@ export default {
       return UsjListItemDefault
     }
 
-    return createElement(getItemComponent(), { props, ...data }, children)
+    return createElement(
+      getItemComponent(),
+      Object.assign({ props }, data),
+      children
+    )
   }
 }
