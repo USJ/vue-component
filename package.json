@@ -5,16 +5,27 @@
   "main": "dist/@usj/vue-component.cjs.js",
   "module": "dist/@usj/vue-component.es.js",
   "scripts": {
-    "bundle": "bili src/components/index.js --plugin vue,node-resolve --format cjs --format es",
+    "bundle":
+      "bili src/components/index.js --plugin vue,node-resolve --format cjs --format es",
     "play": "poi --config play.config.js",
     "build:play": "poi build --config play.config.js",
-    "release:prerelease": "npm version prerelease -m 'Bump version' && npm publish"
+    "release:prerelease":
+      "npm version prerelease -m 'Bump version' && npm publish"
   },
   "repository": "git+https://github.com/USJ/vue-components.git",
-  "keywords": [
-    "USJ"
+  "keywords": ["USJ"],
+  "author": "USJ Development Team <dev@usj.edu.mo>",
+  "contributors": [
+    {
+      "name": "Marco Leong",
+      "email": "leong.chou.kin@usj.edu.mo",
+      "url": "https://www.marcoleong.com"
+    },
+    {
+      "name": "Rivka Fong",
+      "email": "rivka.fong@usj.edu.mo"
+    }
   ],
-  "author": "Marco Leong",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/USJ/vue-components/issues"
