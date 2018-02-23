@@ -23,10 +23,6 @@
   </div>
 </template>
 
-<style lang="scss" src="./usjFile.scss">
-
-</style>
-
 <script>
 import getClosestVueParent from '../../core/utils/getClosestVueParent'
 export default {
@@ -56,10 +52,6 @@ export default {
   methods: {
     getMultipleName(files) {
       let names = []
-      console.log(files)
-      //        [...files].forEach((file) => {
-      //          names.push(file.name)
-      //        })
       return names.join(', ')
     },
     openPicker() {
@@ -106,3 +98,25 @@ export default {
   }
 }
 </script>
+
+<style lang="postcss">
+.usj-file {
+  display: flex;
+  flex: 1;
+
+  input[type='file'] {
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    border: 0;
+  }
+
+  .usj-icon {
+    cursor: pointer;
+  }
+}
+</style>
