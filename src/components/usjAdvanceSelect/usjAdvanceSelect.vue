@@ -64,7 +64,9 @@
   </div>
 </template>
 
-<script src="./script.js"></script>
+<script src="./script.js">
+</script>
+
 <style type="postcss" src="./usjAdvanceSelect.css">
 
 </style>

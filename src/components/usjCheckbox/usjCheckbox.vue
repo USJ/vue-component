@@ -11,7 +11,9 @@
   </div>
 </template>
 
-<style lang="postcss" src="./usjCheckbox.css"></style>
+<style lang="postcss" src="./usjCheckbox.css">
+
+</style>
 
 <script>
 export default {

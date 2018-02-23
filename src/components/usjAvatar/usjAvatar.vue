@@ -4,10 +4,12 @@
   </div>
 </template>
 
-<style lang="postcss" src="./usjAvatar.css"></style>
+<style lang="postcss" src="./usjAvatar.css">
+
+</style>
 
 <script>
-  export default {
-    name: 'usj-avatar'
-  }
+export default {
+  name: 'usj-avatar'
+}
 </script>

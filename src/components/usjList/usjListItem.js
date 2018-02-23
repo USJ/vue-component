@@ -1,8 +1,8 @@
-import UsjListItemButton from './usjListItemButton'
-import UsjListItemLink from './usjListItemLink'
-import UsjListItemRouter from './usjListItemRouter'
-import usjListItemExpand from './usjListItemExpand'
-import UsjListItemDefault from './usjListItemDefault'
+import UsjListItemButton from './usjListItemButton.vue'
+import UsjListItemLink from './usjListItemLink.vue'
+import UsjListItemRouter from './usjListItemRouter.vue'
+import usjListItemExpand from './usjListItemExpand.vue'
+import UsjListItemDefault from './usjListItemDefault.vue'
 
 export default {
   functional: true,

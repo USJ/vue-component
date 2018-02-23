@@ -6,15 +6,3 @@
     <!--<button @click="$emit('click', $event)"></button>-->
   </li>
 </template>
-<script></script>
-<style lang="scss">
-  .usj-dropdown__item--button {
-    /*cursor: pointer;*/
-    /*position: relative;*/
-    /*button {*/
-      /*position: absolute;*/
-      /*top: 0;*/
-      /*width: 100%;*/
-    /*}*/
-  }
-</style>

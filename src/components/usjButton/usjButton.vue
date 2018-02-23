@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <button ref="root" class="usj-button" @click="fireEvent">
     <slot></slot>
   </button>
@@ -8,10 +8,10 @@
 export default {
   props: ['usjValue'],
   methods: {
-    fireEvent: function (e) {
+    fireEvent: function(e) {
       this.$emit('click', e)
     },
-    getValue () {
+    getValue() {
       return this.usjValue
     }
   }
@@ -19,4 +19,6 @@ export default {
 </script>
 
 <style lang="scss" src="./usjButton.scss">
+
+</style>
 

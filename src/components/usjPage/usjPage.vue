@@ -4,4 +4,6 @@
   </div>
 </template>
 
-<style lang="scss" src="./usjPage.scss"></style>
+<style lang="scss" src="./usjPage.scss">
+
+</style>

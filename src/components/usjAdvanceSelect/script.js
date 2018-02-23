@@ -1,6 +1,6 @@
-import { debounce, isPlainObject, isArray, has } from 'lodash'
+import debounce from '../../core/utils/debounce'
 
-export default {
+const usjAdvanceSelect = {
   props: {
     options: {
       type: Array,
@@ -245,7 +245,7 @@ export default {
     updateLocalValue() {
       // handle multiple
       if (this.multiple) {
-        if (!isArray(this.value)) {
+        if (!Array.isArray(this.value)) {
           console.error(
             `v-model has to be Array for multiple, ${typeof this.value} given`
           )
@@ -260,7 +260,7 @@ export default {
         }
 
         if (this.fetchFunction) {
-          if (!isPlainObject(this.value)) {
+          if (!this.value instanceof Object) {
             console.error(
               'fetchFunction cannot be used without `v-model` as object'
             )
@@ -285,7 +285,7 @@ export default {
       this.togglePlaceholderEl(!this.hasSelected)
     },
     isOptionObject(object) {
-      return has(object, 'label') && has(object, 'value')
+      return object.hasOwnProperty('label') && object.hasOwnProperty('value')
     }
   },
   mounted() {
@@ -303,3 +303,5 @@ export default {
     this.toggleMenuEl(false)
   }
 }
+
+export default usjAdvanceSelect

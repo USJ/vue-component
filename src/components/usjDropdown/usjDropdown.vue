@@ -4,44 +4,44 @@
   </div>
 </template>
 <script>
-let onClickWindow;
+let onClickWindow
 
 export default {
   data() {
     return {
       opened: false
-    };
+    }
   },
   computed: {
     classes() {
-      let classes = [];
+      let classes = []
 
-      if (this.opened) classes.push('usj-dropdown--opened');
+      if (this.opened) classes.push('usj-dropdown--opened')
 
-      return classes.join(' ');
+      return classes.join(' ')
     }
   },
   methods: {
     toggleDropdown() {
-      this.opened = !this.opened;
+      this.opened = !this.opened
     },
     closeDropdown() {
-      this.opened = false;
+      this.opened = false
     }
   },
   mounted() {
     onClickWindow = e => {
-      if (this.opened) this.closeDropdown();
-    };
-    window.addEventListener('mouseup', onClickWindow);
+      if (this.opened) this.closeDropdown()
+    }
+    window.addEventListener('mouseup', onClickWindow)
   },
   beforeDestroy() {
-    window.removeEventListener('mouseup', onClickWindow);
+    window.removeEventListener('mouseup', onClickWindow)
   }
-};
+}
 </script>
 <style lang="scss">
-@import '../../style/variables';
+@import '../../style/variables.scss';
 
 $_raised-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
 $min-width: 100px;

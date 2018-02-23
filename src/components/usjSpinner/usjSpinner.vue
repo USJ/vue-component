@@ -14,4 +14,6 @@
     <div class="sk-circle12 sk-child"></div>
   </span>
 </template>
-<style lang="postcss" src="./usjSpinner.css"></style>
+<style lang="postcss" src="./usjSpinner.css">
+
+</style>

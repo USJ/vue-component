@@ -10,36 +10,41 @@
   </div>
 </template>
 
-<style lang="postcss" src="./usjRadio.css"></style>
+<style lang="postcss" src="./usjRadio.css">
+
+</style>
 
 <script>
-  export default {
-    name: 'usj-radio',
-    props: {
-      name: String,
-      id: String,
-      value: [String, Boolean, Number],
-      usjValue: {
-        type: [String, Boolean, Number],
-        required: true
-      },
-      disabled: Boolean
+export default {
+  name: 'usj-radio',
+  props: {
+    name: String,
+    id: String,
+    value: [String, Boolean, Number],
+    usjValue: {
+      type: [String, Boolean, Number],
+      required: true
     },
-    computed: {
-      classes () {
-        return {
-          'usj-checked': typeof this.value !== 'undefined' && this.value !== null && this.usjValue.toString() === this.value.toString(),
-          'usj-disabled': this.disabled
-        }
+    disabled: Boolean
+  },
+  computed: {
+    classes() {
+      return {
+        'usj-checked':
+          typeof this.value !== 'undefined' &&
+          this.value !== null &&
+          this.usjValue.toString() === this.value.toString(),
+        'usj-disabled': this.disabled
       }
-    },
-    methods: {
-      toggleCheck ($event) {
-        if (!this.disabled) {
-          this.$emit('input', this.usjValue, $event)
-          this.$emit('change', this.usjValue, $event)
-        }
+    }
+  },
+  methods: {
+    toggleCheck($event) {
+      if (!this.disabled) {
+        this.$emit('input', this.usjValue, $event)
+        this.$emit('change', this.usjValue, $event)
       }
     }
   }
+}
 </script>

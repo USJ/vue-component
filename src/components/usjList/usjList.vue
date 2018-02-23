@@ -4,4 +4,6 @@
   </ul>
 </template>
 
-<style lang="scss" src="./usjList.scss"></style>
+<style lang="scss" src="./usjList.scss">
+
+</style>

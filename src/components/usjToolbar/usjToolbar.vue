@@ -4,10 +4,6 @@
   </div>
 </template>
 
-<style lang="scss" src="./usjToolbar.scss"></style>
+<style lang="scss" src="./usjToolbar.scss">
 
-<script>
-  export default {
-    name: 'usj-toolbar'
-  }
-</script>
+</style>

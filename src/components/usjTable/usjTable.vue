@@ -4,7 +4,9 @@
   </table>
 </template>
 
-<style lang="scss" src="./usjTable.scss"></style>
+<style lang="scss" src="./usjTable.scss">
+
+</style>
 
 <script>
 import getClosestVueParent from '../../core/utils/getClosestVueParent'
