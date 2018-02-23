@@ -4,9 +4,10 @@
   "description": "VueJS components used internally by USJ",
   "main": "index.js",
   "scripts": {
-    "bundle": "bili index.js --plugin vue",
+    "bundle": "bili src/components/index.js --plugin vue,node-resolve",
     "play": "poi --config play.config.js",
-    "build:play": "poi build --config play.config.js"
+    "build:play": "poi build --config play.config.js",
+    "release:prerelease": "npm run bundle && npm version prerelease -m 'Bump version' && npm publish"
   },
   "repository": "git+https://github.com/USJ/vue-components.git",
   "keywords": [
@@ -21,8 +22,10 @@
   "devDependencies": {
     "ag-grid": "^16.0.1",
     "ag-grid-vue": "^16.0.0",
+    "bili": "^2.2.7",
     "flatpickr": "^4.3.2",
     "material-design-icons": "^3.0.1",
+    "node-sass": "^4.7.2",
     "play": "^0.5.0",
     "poi": "^9.6.13",
     "postcss-color-function": "^4.0.1",
@@ -30,8 +33,10 @@
     "postcss-import": "^11.1.0",
     "postcss-media-minmax": "^3.0.0",
     "postcss-nested": "^3.0.0",
+    "rollup-plugin-node-resolve": "^3.0.3",
     "rollup-plugin-vue": "^3.0.0",
     "rucksack-css": "^1.0.2",
+    "sass-loader": "^6.0.6",
     "stylus-loader": "^3.0.1",
     "vue-play": "^3.2.1",
     "vue-template-compiler": "^2.5.13"

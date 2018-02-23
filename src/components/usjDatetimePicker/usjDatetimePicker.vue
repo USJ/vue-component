@@ -16,8 +16,9 @@
 <style src="./usj-theme.styl" lang="stylus">
 </style>
 
-<script type="text/javascript">
-import Flatpickr from 'flatpickr'
+<script>
+var flatpickr = require('flatpickr')
+// import flatpickr from 'flatpickr'
 import getClosestVueParent from '../../core/utils/getClosestVueParent'
 import common from '../usjInputContainer/common'
 // You have to import css yourself

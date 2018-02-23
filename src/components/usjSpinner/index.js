@@ -1,25 +1,24 @@
-
-import { range } from 'lodash'
 require('./usjSpinner.css')
 
+function range(begin, end) {
+  Array.from(new Array(end), (val, index) => index + begin)
+}
+
 const usjSpinner = {
-  render: function (h) {
+  render: function(h) {
     let children = []
-    range(1, 13).forEach((i) => {
+    range(1, 13).forEach(i => {
       children.push(
-        h(
-          'div',
-          {
-            'class': `sk-circle${i} sk-child`
-          }
-        )
+        h('div', {
+          class: `sk-circle${i} sk-child`
+        })
       )
     })
 
     return h(
       this.tag,
       {
-        'class': 'sk-circle usj-spinner'
+        class: 'sk-circle usj-spinner'
       },
       children
     )
@@ -32,7 +31,7 @@ const usjSpinner = {
   }
 }
 
-export default function install (Vue) {
+export default function install(Vue) {
   Vue.component('usj-spinner', usjSpinner)
 }
 
