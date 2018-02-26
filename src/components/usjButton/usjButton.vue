@@ -22,6 +22,9 @@ export default {
   @import '../../style/variables.scss';
   @import '../../style/elevation';
 
+  // TODO: need to migrate to postcss
+  $gray6: #969696;
+
   $button-width: 88px;
   $button-height: 36px;
   $button-radius: 2px;
@@ -53,7 +56,7 @@ export default {
     border: 0;
     border-radius: $button-radius;
     transition: $swift-ease-out;
-    color: var(--gray6);
+    color: $gray6;
     font-size: $button-font-size;
     font-style: inherit;
     font-variant: inherit;
