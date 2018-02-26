@@ -15,7 +15,7 @@
   @import '../../style/variables.css';
 
   :root {
-    --checkbox-size: 20;
+    --checkbox-size: 20px;
     --checkbox-touch-size: 48px;
   }
 
@@ -106,13 +106,13 @@
 
   .usj-checkbox.usj-checked {
     .usj-checkbox-container {
-      border: 2px solid $usj-theme-orange;
-      background: $usj-theme-orange;
+      border: 2px solid var(--usj-theme-orange);
+      background: var(--usj-theme-orange);
 
       &:after {
         opacity: 1;
         transform: rotate(45deg) scale3D(1, 1, 1);
-        transition: $swift-ease-out;
+        transition: var(--swift-ease-out);
       }
     }
   }
