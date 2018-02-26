@@ -2,8 +2,8 @@
   "name": "@usj/vue-components",
   "version": "1.0.0-alpha.8",
   "description": "VueJS components used internally by USJ",
-  "main": "dist/@usj/vue-component.cjs.js",
-  "module": "dist/@usj/vue-component.es.js",
+  "main": "./dist/@usj/vue-components.cjs.js",
+  "module": "./dist/@usj/vue-components.es.js",
   "scripts": {
     "build": "bili src/components/index.js --plugin node-resolve,vue --format cjs --format es",
     "play": "poi --config play.config.js",
