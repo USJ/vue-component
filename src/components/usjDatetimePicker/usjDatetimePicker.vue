@@ -17,11 +17,12 @@
 </style>
 
 <script>
-var flatpickr = require('flatpickr')
+var flatpickr = require('flatpickr').default
+
 // import flatpickr from 'flatpickr'
 import getClosestVueParent from '../../core/utils/getClosestVueParent'
 import common from '../usjInputContainer/common'
-// You have to import css yourself
+
 export default {
   mixins: [common],
   props: {
@@ -76,7 +77,7 @@ export default {
     if (!this.fp) {
       // Bind on parent element if wrap is true
       let elem = this.config.wrap ? this.$el.parentNode : this.$el
-      this.fp = new Flatpickr(elem, this.config)
+      this.fp = flatpickr(elem, this.config)
     }
     this.$nextTick(() => {
       this.parentContainer = getClosestVueParent(

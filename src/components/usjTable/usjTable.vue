@@ -9,7 +9,7 @@
   @import '../../style/variables.scss';
 
   .usj-table {
-    font-family: var(--usj-font-family);
+    font-family: $usj-font-family;
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;

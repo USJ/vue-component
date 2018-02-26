@@ -23,7 +23,7 @@ import usjPage from './usjPage'
 import usjRadio from './usjRadio'
 import usjSelect from './usjSelect'
 import usjSpinner from './usjSpinner'
-import usjSwitch from './usjSwitch'
+// import usjSwitch from './usjSwitch'
 import usjTable from './usjTable'
 import usjTabs from './usjTabs'
 // import usjTextarea from './usjTextarea'
@@ -56,7 +56,7 @@ export {
   usjRadio,
   usjSelect,
   usjSpinner,
-  usjSwitch,
+  // usjSwitch,
   usjTable,
   usjTabs,
   // usjTextarea,

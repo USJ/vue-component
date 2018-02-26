@@ -1,5 +1,5 @@
 <style lang="scss">
-    @import '../../style/variables';
+    @import '../../style/variables.scss';
     @import '../../style/mixins';
     /* Rows and Columns */
 
