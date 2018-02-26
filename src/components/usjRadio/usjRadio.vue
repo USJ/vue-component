@@ -10,8 +10,8 @@
   </div>
 </template>
 
-<style lang="postcss">
-  @import '../../style/vars';
+<style lang="scss">
+  @import '../../style/variables.scss';
 
   $radio-size: 20px;
   $radio-touch-size: 48px;

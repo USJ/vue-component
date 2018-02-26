@@ -4224,10 +4224,6 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-material-design-icons@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/material-design-icons/-/material-design-icons-3.0.1.tgz#9a71c48747218ebca51e51a66da682038cdcb7bf"
-
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
   resolved "https://registry.yarnpkg.com/math-expression-evaluator/-/math-expression-evaluator-1.2.17.tgz#de819fdbcd84dccd8fae59c6aeb79615b9d266ac"
@@ -5720,7 +5716,7 @@ postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
-postcss@^6.0, postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.14, postcss@^6.0.17, postcss@^6.0.18, postcss@^6.0.5, postcss@^6.0.6, postcss@^6.0.7, postcss@^6.0.8:
+postcss@^6.0, postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.14, postcss@^6.0.17, postcss@^6.0.18, postcss@^6.0.19, postcss@^6.0.5, postcss@^6.0.6, postcss@^6.0.7, postcss@^6.0.8:
   version "6.0.19"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.19.tgz#76a78386f670b9d9494a655bf23ac012effd1555"
   dependencies:
@@ -6472,9 +6468,40 @@ rollup-plugin-uglify@^2.0.1:
   dependencies:
     uglify-js "^3.0.9"
 
-rollup-plugin-vue@^3.0.0:
+"rollup-plugin-vue@https://github.com/marcoleong/rollup-plugin-vue/archive/948e5bc9cc3319124a28af475f2627a7e7e5792f.tar.gz":
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-vue/-/rollup-plugin-vue-3.0.0.tgz#4fd08d2cfbb87321d070f016559cb11645e9f544"
+  resolved "https://github.com/marcoleong/rollup-plugin-vue/archive/948e5bc9cc3319124a28af475f2627a7e7e5792f.tar.gz#195f89043820343e71db5b1bd8965bce3a1b912a"
+  dependencies:
+    babel-runtime "^6.22.0"
+    camelcase "^4.0.0"
+    de-indent "^1.0.2"
+    debug "^3.1.0"
+    hash-sum "^1.0.2"
+    html-minifier "^3.2.3"
+    magic-string "^0.22.4"
+    merge-options "^1.0.0"
+    parse5 "^3.0.3"
+    postcss "^6.0.19"
+    postcss-load-config "^1.2.0"
+    postcss-modules "^0.6.4"
+    postcss-selector-parser "^2.2.3"
+    posthtml "^0.10.1"
+    posthtml-attrs-parser "^0.1.1"
+    rollup-pluginutils "^2.0.1"
+    typescript "^2.4.1"
+    vue-template-es2015-compiler "^1.6.0"
+    vue-template-validator "^1.1.5"
+  optionalDependencies:
+    coffee-script "^1.12.4"
+    coffeescript-compiler "^0.1.1"
+    less "^2.7.2"
+    node-sass "^4.5.0"
+    pug "^2.0.0-beta11"
+    stylus "^0.54.5"
+
+"rollup-plugin-vue@https://github.com/marcoleong/rollup-plugin-vue/archive/v3.0.0.tar.gz":
+  version "3.0.0"
+  resolved "https://github.com/marcoleong/rollup-plugin-vue/archive/v3.0.0.tar.gz#33f33a0e237b3ae5de7cd21759b6aa36b9b8e821"
   dependencies:
     babel-runtime "^6.22.0"
     camelcase "^4.0.0"
@@ -7639,7 +7666,7 @@ vue-template-validator@^1.1.5:
   dependencies:
     chalk "^1.1.1"
 
-vue@^2.3.3:
+vue@^2.3.3, vue@^2.5.13:
   version "2.5.13"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.13.tgz#95bd31e20efcf7a7f39239c9aa6787ce8cf578e1"
 

@@ -5,15 +5,15 @@
   "main": "dist/@usj/vue-component.cjs.js",
   "module": "dist/@usj/vue-component.es.js",
   "scripts": {
-    "bundle":
-      "bili src/components/index.js --plugin vue,node-resolve --format cjs --format es",
+    "bundle": "bili src/components/index.js --plugin vue,node-resolve --format cjs --format es",
     "play": "poi --config play.config.js",
     "build:play": "poi build --config play.config.js",
-    "release:prerelease":
-      "npm version prerelease -m 'Bump version' && npm publish"
+    "release:prerelease": "npm version prerelease -m 'Bump version' && npm publish"
   },
   "repository": "git+https://github.com/USJ/vue-components.git",
-  "keywords": ["USJ"],
+  "keywords": [
+    "USJ"
+  ],
   "author": "USJ Development Team <dev@usj.edu.mo>",
   "contributors": [
     {
@@ -36,7 +36,6 @@
     "ag-grid-vue": "^16.0.0",
     "bili": "^2.2.7",
     "flatpickr": "^4.3.2",
-    "material-design-icons": "^3.0.1",
     "node-sass": "^4.7.2",
     "play": "^0.5.0",
     "poi": "^9.6.13",
@@ -46,10 +45,11 @@
     "postcss-media-minmax": "^3.0.0",
     "postcss-nested": "^3.0.0",
     "rollup-plugin-node-resolve": "^3.0.3",
-    "rollup-plugin-vue": "^3.0.0",
+    "rollup-plugin-vue": "https://github.com/marcoleong/rollup-plugin-vue/archive/948e5bc9cc3319124a28af475f2627a7e7e5792f.tar.gz",
     "rucksack-css": "^1.0.2",
     "sass-loader": "^6.0.6",
     "stylus-loader": "^3.0.1",
+    "vue": "^2.5.13",
     "vue-play": "^3.2.1",
     "vue-template-compiler": "^2.5.13"
   },
@@ -61,7 +61,6 @@
   "peerDependencies": {
     "ag-grid": "^16.0.1",
     "flatpickr": "^4.3.2",
-    "material-design-icons": "^3.0.1",
     "stylus-loader": "^3.0.1"
   }
 }
