@@ -1,4 +1,8 @@
+<template>
+    <hr class="usj-divider" />
+</template>
 
+<style lang="postcss">
 .usj-divider {
   height: 1px;
   margin: 0;
@@ -11,3 +15,4 @@
     margin-left: 72px;
   }
 }
+</style>
