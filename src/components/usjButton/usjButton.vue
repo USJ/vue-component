@@ -34,7 +34,7 @@ export default {
   $button-fab-space: 24px;
 
   $button-dense-height: 32px;
-  $button-icon-size: 40px;
+  $button-icon-size: 30px;
 
   $button-font-size: 14px;
   .usj-button {
@@ -167,6 +167,7 @@ export default {
       width: $button-icon-size;
       min-width: $button-icon-size;
       height: $button-icon-size;
+      min-height: $button-icon-size;
       margin: 0 6px;
       padding: 8px;
       border-radius: 50%;
@@ -180,17 +181,12 @@ export default {
 
       &.usj-icon-background {
         background: lightgrey;
-        min-width: 36px;
-        width: 36px;
-        height: 30px;
+        color: #747474;
       }
 
       &.usj-inverse {
         background: #969696;
         color: white;
-        min-width: 36px;
-        width: 36px;
-        height: 30px;
 
         &:hover {
           background: #ff5520;
