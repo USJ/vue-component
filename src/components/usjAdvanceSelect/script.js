@@ -192,7 +192,7 @@ const usjAdvanceSelect = {
         this.menuItems = data
         this.loading = false
       })
-    }, 1000),
+    }, 1000).bind(this),
 
     handleInputFocus(e) {
       this.toggleMenuEl(true)
