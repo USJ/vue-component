@@ -1,5 +1,7 @@
 import debounce from '../../core/utils/debounce'
 
+let vm
+
 const usjAdvanceSelect = {
   props: {
     options: {
@@ -186,13 +188,13 @@ const usjAdvanceSelect = {
     },
 
     fetchMenuItems: debounce(function() {
-      this.loading = true
-      this.fetchFunction(this.searchValue).then(data => {
+      vm.loading = true
+      vm.fetchFunction(this.searchValue).then(data => {
         console.debug('Fetch function ', data)
-        this.menuItems = data
-        this.loading = false
+        vm.menuItems = data
+        vm.loading = false
       })
-    }, 1000).bind(this),
+    }, 1000),
 
     handleInputFocus(e) {
       this.toggleMenuEl(true)
@@ -301,6 +303,8 @@ const usjAdvanceSelect = {
 
     this.togglePlaceholderEl(!this.hasSelected)
     this.toggleMenuEl(false)
+
+    vm = this
   }
 }
 
