@@ -34,10 +34,11 @@ export default {
   $button-fab-space: 24px;
 
   $button-dense-height: 32px;
-  $button-icon-size: 30px;
+  $button-icon-size: 32px;
 
   $button-font-size: 14px;
   .usj-button {
+    box-sizing: border-box;
     font-family: $font-family;
     min-width: $button-width;
     //width:100%;

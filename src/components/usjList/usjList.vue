@@ -160,6 +160,21 @@
       }
     }
 
+    .badge{
+      display: inline-block;
+      min-width: 10px;
+      padding: 3px 7px;
+      /*font-size: 12px;*/
+      font-weight: 500;
+      line-height: 1;
+      color: #fff;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      background-color: #777;
+      border-radius: 10px;
+    }
+
     &.usj-active {
       background-color: rgba(#000, 0.12);
     }
