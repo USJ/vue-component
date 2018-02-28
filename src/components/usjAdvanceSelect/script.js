@@ -189,7 +189,7 @@ const usjAdvanceSelect = {
 
     fetchMenuItems: debounce(function() {
       vm.loading = true
-      vm.fetchFunction(this.searchValue).then(data => {
+      vm.fetchFunction(vm.searchValue).then(data => {
         console.debug('Fetch function ', data)
         vm.menuItems = data
         vm.loading = false
