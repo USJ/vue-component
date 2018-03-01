@@ -1,8 +1,12 @@
 import debounce from '../../core/utils/debounce'
+import getClosestVueParent from '../../core/utils/getClosestVueParent.js'
+
+import common from '../usjInputContainer/common'
 
 let vm
 
 const usjAdvanceSelect = {
+  mixins: [common],
   props: {
     options: {
       type: Array,
@@ -30,6 +34,10 @@ const usjAdvanceSelect = {
     multiple: {
       type: Boolean,
       default: false
+    },
+    required: {
+      type: Boolean,
+      default: true
     },
     value: null,
     id: String,
@@ -303,6 +311,27 @@ const usjAdvanceSelect = {
 
     this.togglePlaceholderEl(!this.hasSelected)
     this.toggleMenuEl(false)
+
+    this.$nextTick(() => {
+      this.parentContainer = getClosestVueParent(this.$parent, 'usj-input-container')
+
+      if (!this.parentContainer) {
+        this.$destroy()
+
+        throw new Error('You should wrap the usj-advance-select in a usj-input-container')
+      }
+
+      this.setParentDisabled()
+      this.setParentRequired()
+      this.setParentPlaceholder()
+      this.handleMaxLength()
+      this.updateValues()
+    })
+
+    // this.$nextTick(() => {
+    //   inputContainerCmp = getClosestVueParent(this.$parent, 'usj-input-container')
+
+    // })
 
     vm = this
   }
