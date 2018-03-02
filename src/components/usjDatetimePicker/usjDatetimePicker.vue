@@ -14,9 +14,6 @@
          data-input/>
 </template>
 
-<style src="./usj-theme.styl" lang="stylus">
-</style>
-
 <script>
 var flatpickr = require('flatpickr').default
 
@@ -150,3 +147,30 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus">
+$calendarBackground = #fff
+$calendarBorderColor = alpha(#484848, 0.2)
+
+$monthForeground = #fff
+$monthBackground = #FF8A65
+
+$weekdaysBackground = #FF8A65
+
+$dayForeground = #484848
+$dayHoverBackground = #e2e2e2
+
+$todayColor = #bbb
+
+$selectedDayBackground = #FF8A65
+$selectedDayForeground = #fff
+
+$noCalendarBorder = true
+@require "../../../node_modules/flatpickr/src/style/flatpickr.styl"
+
+.usj-input-container.usj-input-disabled
+    cursor: not-allowed
+
+.usj-input-container.usj-input-disabled .flatpickr-input
+    cursor: not-allowed
+</style>
