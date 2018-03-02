@@ -12,6 +12,7 @@
 
 <style lang="scss">
   @import '../../style/variables.scss';
+  @import '../../style/variables.css';
 
   $radio-size: 20px;
   $radio-touch-size: 48px;
@@ -21,6 +22,26 @@
     margin: 16px 8px 16px 0;
     display: inline-flex;
     position: relative;
+
+    &.usj-disabled{
+      color: var(--gray6);
+    }
+
+    &.usj-checked.usj-disabled{
+      .usj-radio-container {
+        border-color: var(--gray6);
+      }
+
+      .usj-radio-container:after {
+        background: var(--gray6);
+      }
+    }
+
+    &.usj-disabled {
+      .usj-radio-container {
+        border-color: var(--gray6);
+      }
+    }
 
     &:not(.usj-disabled) {
       cursor: pointer;
@@ -87,6 +108,7 @@
         transition: $swift-ease-out;
       }
     }
+
   }
 </style>
 

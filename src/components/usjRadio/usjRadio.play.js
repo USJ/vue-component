@@ -7,12 +7,14 @@ Vue.use(usjRadio)
 play('USJ Radio')
   .add('basic', {
     data () {
-      return { radioValue: 'a' }
+      return { radioValue: 'a', radioValue1: 'a' }
     },
     template: `
       <div>
         <usj-radio name="radio-choose" usj-value="a" v-model="radioValue">Radio A</usj-radio>
         <usj-radio name="radio-choose" usj-value="b" v-model="radioValue">Radio B</usj-radio>
+        <usj-radio name="radio-choose" usj-value="a" v-model="radioValue1" :disabled="true">Radio A</usj-radio>
+        <usj-radio name="radio-choose" usj-value="b" v-model="radioValue1" :disabled="true">Radio B</usj-radio>
       </div>
     `
   })
