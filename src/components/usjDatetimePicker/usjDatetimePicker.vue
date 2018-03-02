@@ -10,6 +10,7 @@
          @input="onInput"
          @keydown.up="onInput"
          @keydown.down="onInput"
+         :disabled="disabled"
          data-input/>
 </template>
 
@@ -64,6 +65,10 @@ export default {
     },
     id: {
       type: String
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -131,6 +136,17 @@ export default {
     value(newValue) {
       this.fp && this.fp.setDate(newValue, true)
     }
+    // disabled (val) {
+    //   if (!this.fp) return;
+
+    //   if (val) {
+    //     this.fp._input.setAttribute('disabled', 'disabled')
+    //   } else {
+    //     this.fp._input.removeAttribute('disabled')
+    //   }
+    //   this.fp.config = Object.assign(this.fp.config, {'allowOpen': val})
+    //   this.fp.redraw()
+    // }
   }
 }
 </script>
