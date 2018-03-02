@@ -1,6 +1,6 @@
 {
   "name": "@usj/vue-components",
-  "version": "1.0.0-alpha.20",
+  "version": "1.0.0-alpha.21",
   "description": "VueJS components used internally by USJ",
   "main": "./dist/@usj/vue-components.cjs.js",
   "module": "./dist/@usj/vue-components.es.js",
