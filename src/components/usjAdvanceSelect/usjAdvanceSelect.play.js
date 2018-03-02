@@ -4,14 +4,17 @@ import { range } from 'lodash'
 
 import Select from './index.js'
 import usjIcon from '../usjIcon'
-
+import usjInputContainer from '../usjInputContainer'
+Vue.use(usjInputContainer)
 Vue.use(Select)
 Vue.use(usjIcon)
 
 play('USJ Advance Select')
   .add('Basic single select (disabled)', {
     template: `
+    <usj-input-container>
     <usj-advance-select :options="sampleOptions" disabled></usj-advance-select>
+    </usj-input-container>
     `,
     data () {
       return {
@@ -25,7 +28,11 @@ play('USJ Advance Select')
   .add('Basic single select', {
     template: `
 <div>
+<usj-input-container>
+
     <usj-advance-select :options="sampleOptions" v-model="sampleValue" searchable></usj-advance-select>
+    </usj-input-container>
+
     V-Model: {{ sampleValue }}
 </div>
     `,
@@ -42,9 +49,17 @@ play('USJ Advance Select')
   .add('Multiple select', {
     template: `
 <div>
+<usj-input-container>
+
     <usj-advance-select :options="sampleOptions" v-model="sampleValue" multiple></usj-advance-select>
+    </usj-input-container>
+
     <br />
+    <usj-input-container>
+
     <usj-advance-select :options="sampleOptions" v-model="sampleValue" multiple searchable></usj-advance-select>
+    </usj-input-container>
+
     V-Model: {{ sampleValue }}
 </div>
     `,
@@ -61,11 +76,15 @@ play('USJ Advance Select')
   .add('Async select (custom template)', {
     template: `
     <div>
+    <usj-input-container>
+
       <usj-advance-select :fetch-function="fetchFunction" searchable v-model="sampleValue">
         <template scope="user">
           <div>{{ user.username }}</div>
         </template>
       </usj-advance-select>
+      </usj-input-container>
+
         v-model: {{ sampleValue }}
     </div>
     `,
