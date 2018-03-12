@@ -6498,6 +6498,37 @@ rollup-plugin-uglify@^2.0.1:
     pug "^2.0.0-beta11"
     stylus "^0.54.5"
 
+rollup-plugin-vue@marcoleong/rollup-plugin-vue#my-dist:
+  version "3.0.0"
+  resolved "https://codeload.github.com/marcoleong/rollup-plugin-vue/tar.gz/0405dbf54c62768a075b43895a18d8b89529077d"
+  dependencies:
+    babel-runtime "^6.22.0"
+    camelcase "^4.0.0"
+    de-indent "^1.0.2"
+    debug "^3.1.0"
+    hash-sum "^1.0.2"
+    html-minifier "^3.2.3"
+    magic-string "^0.22.4"
+    merge-options "^1.0.0"
+    parse5 "^3.0.3"
+    postcss "^6.0.19"
+    postcss-load-config "^1.2.0"
+    postcss-modules "^0.6.4"
+    postcss-selector-parser "^2.2.3"
+    posthtml "^0.10.1"
+    posthtml-attrs-parser "^0.1.1"
+    rollup-pluginutils "^2.0.1"
+    typescript "^2.4.1"
+    vue-template-es2015-compiler "^1.6.0"
+    vue-template-validator "^1.1.5"
+  optionalDependencies:
+    coffee-script "^1.12.4"
+    coffeescript-compiler "^0.1.1"
+    less "^2.7.2"
+    node-sass "^4.5.0"
+    pug "^2.0.0-beta11"
+    stylus "^0.54.5"
+
 rollup-pluginutils@^1.5.0:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-1.5.2.tgz#1e156e778f94b7255bfa1b3d0178be8f5c552408"
