@@ -203,18 +203,18 @@ const usjAdvanceSelect = {
       }
 
       if (this.fetchFunction && this.searchValue) {
-        this.fetchMenuItems()
+        this.fetchMenuItems.call(this)
       }
     },
 
-    fetchMenuItems: debounce(function() {
-      vm.loading = true
-      vm.fetchFunction(vm.searchValue).then(data => {
+    fetchMenuItems: function () {
+      this.loading = true
+      this.fetchFunction(vm.searchValue).then(data => {
         console.debug('Fetch function ', data)
-        vm.menuItems = data
-        vm.loading = false
+        this.menuItems = data
+        this.loading = false
       })
-    }, 1000),
+    }, 
 
     handleInputFocus(e) {
       this.toggleMenuEl(true)
@@ -346,6 +346,9 @@ const usjAdvanceSelect = {
     // })
 
     vm = this
+  },
+  created () {
+    this.fetchMenuItems = debounce(this.fetchMenuItems, 1000)
   }
 }
 
