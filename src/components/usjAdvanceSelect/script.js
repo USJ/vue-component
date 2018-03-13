@@ -89,7 +89,7 @@ const usjAdvanceSelect = {
         return this.multipleItems.length > 0
       }
 
-      return this.singleItem !== {}
+      return Object.keys(this.singleItem).length > 0
     },
     hasDefaultSlot() {
       return !!this.$scopedSlots.default
@@ -317,7 +317,7 @@ const usjAdvanceSelect = {
       this.menuItems = this.options
     }
 
-    if (this.value) {
+    if (this.value && Object.keys(this.value).length > 0) {
       this.updateLocalValue()
     }
 

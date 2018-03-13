@@ -77,15 +77,23 @@ play('USJ Advance Select')
     template: `
     <div>
     <usj-input-container>
-
       <usj-advance-select :fetch-function="fetchFunction" searchable v-model="sampleValue">
         <template scope="user">
           <div>{{ user.username }}</div>
         </template>
       </usj-advance-select>
-      </usj-input-container>
+    </usj-input-container>
 
         v-model: {{ sampleValue }}
+
+    <usj-input-container>
+      <usj-advance-select :fetch-function="fetchFunction" searchable v-model="sampleValue2">
+        <template scope="user">
+          <div>{{ user.username }}</div>
+        </template>
+      </usj-advance-select>
+    </usj-input-container>
+        v-model: {{ sampleValue2 }}
     </div>
     `,
     data () {
@@ -93,6 +101,7 @@ play('USJ Advance Select')
 
       return {
         sampleValue: asyncOptions[0],
+        sampleValue2: {},
         sampleOptions: asyncOptions
       }
     },
