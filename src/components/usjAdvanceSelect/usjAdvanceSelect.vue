@@ -11,7 +11,7 @@
         <span v-else>{{ singleLabel }}</span>
       </div>
       <div class="usj-select__multiple-value" v-if="showValueEl && multiple">
-        <div class="item" v-for="(item, index) in multipleItems">
+        <div class="item" v-for="(item, index) in multipleItems" :key="index">
           <div class="item__label">
             <slot v-bind="item" v-if="hasDefaultSlot"></slot>
             <span v-else>{{ item }}</span>
@@ -25,7 +25,7 @@
         {{ placeholder }}
       </div>
       <div class="usj-select__input" >
-        <input type="text" ref="input" id="input-id" v-if="searchable"
+        <input type="text" ref="input" id="input-id" v-show="searchable"
                @focus="handleInputFocus"
                v-model="searchValue"
                @input="handleInputInput"

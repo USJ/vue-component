@@ -107,6 +107,7 @@ play('USJ Advance Select')
     },
     methods: {
       fetchFunction (data) {
+        this.$log('fetch with data ' + data)
         return new Promise((resolve, reject) => {
           let items = this.sampleOptions
 

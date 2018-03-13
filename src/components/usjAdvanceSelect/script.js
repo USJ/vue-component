@@ -172,7 +172,7 @@ const usjAdvanceSelect = {
     },
     removeItem(item, index) {
       this.multipleItems.splice(index, 1)
-      console.debug(this.getUpdateValue())
+
       this.updateValue(this.getUpdateValue())
     },
     handleInputBlur() {
@@ -203,14 +203,14 @@ const usjAdvanceSelect = {
       }
 
       if (this.fetchFunction && this.searchValue) {
-        this.fetchMenuItems.call(this)
+        this.fetchMenuItems.call(this, this.searchValue)
       }
     },
 
-    fetchMenuItems: function () {
+    fetchMenuItems (searchValue) {
       this.loading = true
-      this.fetchFunction(vm.searchValue).then(data => {
-        console.debug('Fetch function ', data)
+
+      this.fetchFunction(searchValue).then(data => {
         this.menuItems = data
         this.loading = false
       })
