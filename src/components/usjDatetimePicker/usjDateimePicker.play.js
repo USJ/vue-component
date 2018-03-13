@@ -12,10 +12,11 @@ play('USJ Datetime Picker')
     template: `
       <div>
         <usj-input-container>
-          <usj-datetime-picker :config="config" placeholder="Pick a date" v-model="sampleDate"></usj-datetime-picker>
+        <label>Date time picker</label>
+          <usj-datetime-picker :config="config" placeholder="Pick a date" v-model="sampleDate" asDate></usj-datetime-picker>
         </usj-input-container>
         <usj-input-container>
-          <usj-datetime-picker :config="config" :disabled="true" placeholder="Pick a date" v-model="sampleDate"></usj-datetime-picker>
+          <usj-datetime-picker :config="config" :disabled="true" placeholder="Pick a date" v-model="sampleDate" asDate></usj-datetime-picker>
         </usj-input-container>
       </div>
     `,
@@ -23,7 +24,7 @@ play('USJ Datetime Picker')
       return { sampleDate: new Date(), config: {enableTime: true} }
     },
     watch: {
-      'sampleDate' : function(newValue){
+      sampleDate (newValue) {
         this.$log(newValue)
       }
     }

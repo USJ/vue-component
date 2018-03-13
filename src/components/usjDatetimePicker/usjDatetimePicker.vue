@@ -7,9 +7,6 @@
          v-model="mutableValue"
          @focus="onFocus"
          @blur="onBlur"
-         @input="onInput"
-         @keydown.up="onInput"
-         @keydown.down="onInput"
          :disabled="disabled"
          data-input/>
 </template>
@@ -70,12 +67,31 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    asDate: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
     return {
       mutableValue: this.value,
       fp: null
+    }
+  },
+  methods: {
+    handleChange (val) {
+      let value
+      
+      if (!this.config.mode || this.config.mode === 'single') {
+        value = this.fp.selectedDates[0]
+      } else {
+        value = this.fp.selectedDates
+      }
+      
+      this.updateValues(value)
+      this.$emit('change', value)
+      this.$emit('input', value)
     }
   },
   mounted() {
@@ -85,10 +101,12 @@ export default {
 
     // Load flatPickr if not loaded yet
     if (!this.fp) {
+      this.config.onChange = this.handleChange
       // Bind on parent element if wrap is true
       let elem = this.config.wrap ? this.$el.parentNode : this.$el
       this.fp = flatpickr(elem, this.config)
     }
+
     this.$nextTick(() => {
       this.parentContainer = getClosestVueParent(
         this.$parent,
@@ -131,15 +149,19 @@ export default {
      * @param newValue
      */
     mutableValue(newValue) {
-      this.$emit('input', newValue)
+      if (this.asDate) {
+        this.$emit('input', this.fp.selectedDates[0])
+      } else {
+        this.$emit('input', newValue)
+      }
     },
-    /**
-     * Watch for changes from parent component and update DOM
-     *
-     * @param newValue
-     */
+    // /**
+    //  * Watch for changes from parent component and update DOM
+    //  *
+    //  * @param newValue
+    //  */
     value(newValue) {
-      this.fp && this.fp.setDate(newValue, true)
+      this.fp && this.fp.setDate(newValue, false)
     }
     // disabled (val) {
     //   if (!this.fp) return;
