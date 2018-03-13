@@ -54,16 +54,15 @@
     "stylus-loader": "3.0.1",
     "vue": "2.5.13",
     "vue-play": "3.2.1",
-    "vue-template-compiler": "2.5.13"
+    "vue-template-compiler": "2.5.13",
+    "stylus": "^0.54.5"
   },
   "dependencies": {
     "autosize": "^4.0.0",
-    "element.scrollintoviewifneeded-polyfill": "^1.0.1",
-    "stylus": "^0.54.5"
+    "element.scrollintoviewifneeded-polyfill": "^1.0.1"
   },
-  "peerDependencies": {
+  "optionalDependencies": {
     "ag-grid": "^16.0.1",
-    "flatpickr": "^4.3.2",
-    "stylus-loader": "^3.0.1"
+    "flatpickr": "^4.3.2"
   }
 }

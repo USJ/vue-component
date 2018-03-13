@@ -15,7 +15,11 @@
 </template>
 
 <script>
-var flatpickr = require('flatpickr').default
+try {
+  var flatpickr = require('flatpickr').default
+} catch (er) {
+  flatpickr = null
+}
 
 // import flatpickr from 'flatpickr'
 import getClosestVueParent from '../../core/utils/getClosestVueParent'
@@ -75,6 +79,10 @@ export default {
     }
   },
   mounted() {
+    if (!flatpickr) {
+      throw "'flatpickr' is required for usjDatetimePicker component"
+    }
+
     // Load flatPickr if not loaded yet
     if (!this.fp) {
       // Bind on parent element if wrap is true
