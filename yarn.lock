@@ -100,7 +100,7 @@ ag-grid-vue@16.0.0:
   version "16.0.0"
   resolved "https://registry.yarnpkg.com/ag-grid-vue/-/ag-grid-vue-16.0.0.tgz#4e45bacbf94f6a6e2a090d58e4dd067254f85d24"
 
-ag-grid@16.0.1:
+ag-grid@^16.0.1:
   version "16.0.1"
   resolved "https://registry.yarnpkg.com/ag-grid/-/ag-grid-16.0.1.tgz#f9b5562fff6c70b38a20ffb1708800006c902c1a"
 
@@ -2772,7 +2772,7 @@ first-commit-date@^0.2.0:
   dependencies:
     get-first-commit "^0.2.0"
 
-flatpickr@4.3.2:
+flatpickr@^4.3.2:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.3.2.tgz#6a477043c075ef36c3ff54fadb49b936a64d635f"
 
@@ -7076,7 +7076,7 @@ stylus-loader@3.0.1:
     lodash.clonedeep "^4.5.0"
     when "~3.6.x"
 
-stylus@^0.54.5:
+stylus@0.54.5, stylus@^0.54.5:
   version "0.54.5"
   resolved "https://registry.yarnpkg.com/stylus/-/stylus-0.54.5.tgz#42b9560931ca7090ce8515a798ba9e6aa3d6dc79"
   dependencies:
