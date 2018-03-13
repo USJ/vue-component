@@ -24,6 +24,10 @@ const usjAdvanceSelect = {
       type: Boolean,
       default: false
     },
+    emitOnly: { // emit select event only (not update v-model), applicable only to single select
+      type: Boolean,
+      default: false
+    },
     searchable: {
       type: Boolean,
       default: false
@@ -133,6 +137,14 @@ const usjAdvanceSelect = {
     },
     doSelectItem(item) {
       const value = this.isOptionObject(item) ? item.value : item
+
+      if (this.emitOnly) {
+        this.$emit('select', value)
+        this.toggleMenuEl(false)
+        this.toggleValueEl(false)
+        this.togglePlaceholderEl(true)
+        return
+      }
 
       if (this.multiple) {
         this.addItem(value)

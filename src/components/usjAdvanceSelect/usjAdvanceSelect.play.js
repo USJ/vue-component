@@ -136,5 +136,26 @@ play('USJ Advance Select')
       }
     }
   })
+  .add('Emit only select', {
+    template: `
+<div>
+<usj-input-container>
+  <usj-advance-select emitOnly :options="sampleOptions" @select="handleSelect"></usj-advance-select>
+</usj-input-container>
+</div>
+    `,
+    data () {
+      return {
+        sampleOptions: [
+          { label: 'Option 1', value: 'Option 1' }
+        ]
+      }
+    },
+    methods: {
+      handleSelect (val) {
+        this.$log(val)
+      }
+    } 
+  })
 
 
