@@ -55,7 +55,7 @@
     "vue": "2.5.13",
     "vue-play": "3.2.1",
     "vue-template-compiler": "2.5.13",
-    "stylus": "^0.54.5"
+    "stylus": "0.54.5"
   },
   "dependencies": {
     "autosize": "^4.0.0",
