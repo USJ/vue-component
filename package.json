@@ -52,7 +52,7 @@
     "rucksack-css": "1.0.2",
     "sass-loader": "6.0.7",
     "stylus-loader": "3.0.1",
-    "vue": "2.5.13",
+    "vue": "2.5.16",
     "vue-play": "3.2.1",
     "vue-template-compiler": "2.5.13",
     "stylus": "0.54.5"
