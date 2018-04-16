@@ -96,9 +96,9 @@ address@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/address/-/address-1.0.3.tgz#b5f50631f8d6cec8bd20c963963afb55e06cbce9"
 
-ag-grid-vue@16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/ag-grid-vue/-/ag-grid-vue-16.0.0.tgz#4e45bacbf94f6a6e2a090d58e4dd067254f85d24"
+ag-grid-vue@17.1.0:
+  version "17.1.0"
+  resolved "https://registry.yarnpkg.com/ag-grid-vue/-/ag-grid-vue-17.1.0.tgz#1d6ce20345b5e51018a246adcf4a9772202d9df2"
 
 ag-grid@^17.0.0:
   version "17.0.0"

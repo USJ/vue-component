@@ -35,7 +35,7 @@
   "homepage": "https://github.com/USJ/vue-components#readme",
   "devDependencies": {
     "ag-grid": "17.0.0",
-    "ag-grid-vue": "16.0.0",
+    "ag-grid-vue": "17.1.0",
     "bili": "2.2.7",
     "flatpickr": "4.4.3",
     "node-sass": "4.7.2",
