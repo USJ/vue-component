@@ -6,16 +6,17 @@
   "module": "./dist/@usj/vue-components.es.js",
   "scripts": {
     "prebuild": "rimraf ./dist",
-    "build": "bili src/components/index.js --plugin vue,node-resolve --format cjs --format es",
+    "build":
+      "bili src/components/index.js --plugin vue,node-resolve --format cjs --format es",
     "play": "poi --config play.config.js",
     "build:play": "poi build --config play.config.js",
-    "release:prerelease": "npm version prerelease -m 'Bump version' && npm publish",
-    "prepublishOnly": "npm run build"
+    "release:prerelease":
+      "npm version prerelease -m 'Bump version' && npm publish",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
   },
   "repository": "git+https://github.com/USJ/vue-components.git",
-  "keywords": [
-    "USJ"
-  ],
+  "keywords": ["USJ"],
   "author": "USJ Development Team <dev@usj.edu.mo>",
   "contributors": [
     {
@@ -32,13 +33,28 @@
   "bugs": {
     "url": "https://github.com/USJ/vue-components/issues"
   },
+  "jest": {
+    "moduleFileExtensions": ["js", "json", "vue"],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "snapshotSerializers": ["<rootDir>/node_modules/jest-serializer-vue"],
+    "transform": {
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    }
+  },
   "homepage": "https://github.com/USJ/vue-components#readme",
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.15",
     "ag-grid": "16.0.1",
     "ag-grid-vue": "16.0.0",
+    "babel-jest": "^22.4.3",
     "bili": "2.2.7",
     "flatpickr": "4.3.2",
-    "node-sass": "4.7.2",
+    "jest": "^22.4.3",
+    "jest-serializer-vue": "^1.0.0",
+    "node-sass": "^4.9.0",
     "play": "0.5.0",
     "poi": "9.6.13",
     "postcss-color-function": "4.0.1",
@@ -51,11 +67,12 @@
     "rollup-plugin-vue": "marcoleong/rollup-plugin-vue#my-dist",
     "rucksack-css": "1.0.2",
     "sass-loader": "6.0.6",
+    "stylus": "^0.54.5",
     "stylus-loader": "3.0.1",
     "vue": "2.5.13",
+    "vue-jest": "^2.5.0",
     "vue-play": "3.2.1",
-    "vue-template-compiler": "2.5.13",
-    "stylus": "^0.54.5"
+    "vue-template-compiler": "2.5.13"
   },
   "dependencies": {
     "autosize": "^4.0.0",

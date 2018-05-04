@@ -14,14 +14,14 @@ play('USJ Select')
     template: `
 <usj-input-container>
   <label>Country</label>
-  <usj-select>
+  <usj-select @change="$log('on change')" @input="$log('on input')">
     <usj-option>Test option 1</usj-option>
   </usj-select>
 </usj-input-container>
     `
   })
   .add('multiple', {
-    data () {
+    data() {
       return {
         selected: []
       }

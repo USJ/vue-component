@@ -7,56 +7,56 @@ export default {
     placeholder: String
   },
   watch: {
-    value (value) {
+    value(value) {
       this.setParentValue(value)
       this.updateValues(value)
     },
-    disabled () {
+    disabled() {
       this.setParentDisabled()
     },
-    required () {
+    required() {
       this.setParentRequired()
     },
-    placeholder () {
+    placeholder() {
       this.setParentPlaceholder()
     },
-    maxlength () {
+    maxlength() {
       this.handleMaxLength()
     }
   },
   methods: {
-    handleMaxLength () {
+    handleMaxLength() {
       this.parentContainer.enableCounter = this.maxlength > 0
       this.parentContainer.counterLength = this.maxlength
     },
-    setParentValue (value) {
+    setParentValue(value) {
       this.parentContainer.setValue(value || this.$el.value)
     },
-    setParentDisabled () {
+    setParentDisabled() {
       this.parentContainer.isDisabled = this.disabled
     },
-    setParentRequired () {
+    setParentRequired() {
       this.parentContainer.isRequired = this.required
     },
-    setParentPlaceholder () {
+    setParentPlaceholder() {
       this.parentContainer.hasPlaceholder = !!this.placeholder
     },
-    updateValues (value) {
+    updateValues(value) {
       const newValue = value || this.$el.value || this.value
 
       this.setParentValue(newValue)
       this.parentContainer.inputLength = newValue ? newValue.length : 0
     },
-    onFocus () {
+    onFocus() {
       if (this.parentContainer) {
         this.parentContainer.isFocused = true
       }
     },
-    onBlur () {
+    onBlur() {
       this.parentContainer.isFocused = false
       this.setParentValue()
     },
-    onInput () {
+    onInput() {
       this.updateValues()
       this.$emit('change', this.$el.value)
       this.$emit('input', this.$el.value)
