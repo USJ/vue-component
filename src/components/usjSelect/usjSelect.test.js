@@ -17,5 +17,6 @@ describe('usjSelect', () => {
       localVue
     })
     expect(wrapper.isVueInstance()).toBeTruthy()
+    expect(true).toBeTruthy()
   })
 })
