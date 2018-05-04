@@ -34,6 +34,7 @@ jobs:
                     - node_modules/
 
     test:
+        <<: *defaults
         steps:
             - restore_cache:
                 - restore_cache:
