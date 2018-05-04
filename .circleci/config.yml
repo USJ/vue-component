@@ -47,6 +47,7 @@ jobs:
                     command: yarn test
 
 workflows:
+    version: 2
     test_only:
         jobs:
             - checkout_code
