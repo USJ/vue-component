@@ -37,15 +37,14 @@ jobs:
         <<: *defaults
         steps:
             - restore_cache:
-                - restore_cache:
-                    name: Restore code cache
-                    key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
-                - restore_cache:
-                    name: Restore Yarn Package Cache
-                    key: yarn-cache-{{ checksum "yarn.lock" }}
-                - run:
-                    name: Test
-                    command: yarn test
+                name: Restore code cache
+                key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+            - restore_cache:
+                name: Restore Yarn Package Cache
+                key: yarn-cache-{{ checksum "yarn.lock" }}
+            - run:
+                name: Test
+                command: yarn test
 
 workflows:
     version: 2
