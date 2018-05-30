@@ -1,8 +1,25 @@
 {
-  "presets": [["env", { "modules": false }]],
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false
+      }
+    ],
+    "vue"
+  ],
   "env": {
     "test": {
-      "presets": [["env", { "targets": { "node": "current" } }]]
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ]
+      ]
     }
   }
 }
