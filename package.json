@@ -20,8 +20,7 @@
     "USJ"
   ],
   "author": "USJ Development Team <dev@usj.edu.mo>",
-  "contributors": [
-    {
+  "contributors": [{
       "name": "Marco Leong",
       "email": "leong.chou.kin@usj.edu.mo",
       "url": "https://www.marcoleong.com"
@@ -90,5 +89,8 @@
     "autosize": "^4.0.0",
     "element.scrollintoviewifneeded-polyfill": "^1.0.1"
   },
-  "optionalDependencies": {}
+  "optionalDependencies": {},
+  "renovate": {
+    "extends": ["default:pinDigestsDisabled"]
+  }
 }
