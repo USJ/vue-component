@@ -60,7 +60,7 @@
     "@storybook/addons": "^3.4.3",
     "@storybook/vue": "^3.4.3",
     "@vue/test-utils": "^1.0.0-beta.15",
-    "ag-grid-vue": "16.0.0",
+    "ag-grid-vue": "18.1.0",
     "bili": "2.2.7",
     "jest": "^22.4.3",
     "jest-serializer-vue": "^1.0.0",

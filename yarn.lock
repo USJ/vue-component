@@ -1434,9 +1434,9 @@ address@1.0.3, address@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/address/-/address-1.0.3.tgz#b5f50631f8d6cec8bd20c963963afb55e06cbce9"
 
-ag-grid-vue@16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/ag-grid-vue/-/ag-grid-vue-16.0.0.tgz#4e45bacbf94f6a6e2a090d58e4dd067254f85d24"
+ag-grid-vue@18.1.0:
+  version "18.1.0"
+  resolved "https://registry.yarnpkg.com/ag-grid-vue/-/ag-grid-vue-18.1.0.tgz#05c19857efd92f5ae3d4bf99de384abedbaf0f9a"
 
 airbnb-js-shims@^1.4.1:
   version "1.4.1"
