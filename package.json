@@ -76,7 +76,7 @@
     "rollup-plugin-node-resolve": "3.3.0",
     "rollup-plugin-vue": "marcoleong/rollup-plugin-vue#my-dist",
     "rucksack-css": "1.0.2",
-    "sass-loader": "6.0.6",
+    "sass-loader": "7.1.0",
     "stylus": "^0.54.5",
     "stylus-loader": "3.0.1",
     "vue": "2.5.13",
