@@ -71,7 +71,7 @@
     "postcss-cssnext": "3.1.0",
     "postcss-import": "11.1.0",
     "postcss-media-minmax": "3.0.0",
-    "postcss-nested": "3.0.0",
+    "postcss-nested": "4.1.1",
     "rimraf": "2.6.2",
     "rollup-plugin-node-resolve": "3.3.0",
     "rollup-plugin-vue": "marcoleong/rollup-plugin-vue#my-dist",
