@@ -1,6 +1,6 @@
 {
   "name": "@usj/vue-components",
-  "version": "1.0.0-alpha.29",
+  "version": "1.0.0-alpha.30",
   "description": "VueJS components used internally by USJ",
   "author": "USJ Development Team <dev@usj.edu.mo>",
   "scripts": {
