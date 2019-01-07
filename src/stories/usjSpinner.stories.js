@@ -1,16 +1,17 @@
-
 import Vue from 'vue'
-import { play } from 'vue-play'
 
-import usjSpinner from './index'
-import usjButton from '../usjButton'
+import usjSpinner from '../components/usjSpinner/index'
+import usjButton from '../components/usjButton'
+import {
+  storiesOf
+} from '@storybook/vue';
 
 Vue.use(usjSpinner)
 Vue.use(usjButton)
 
-play('USJ Spinner')
-  .add('default', {
-    data () {
+storiesOf('USJ Spinner', module)
+  .add('default', () => ({
+    data() {
       return {
         disabled: false
       }
@@ -23,4 +24,4 @@ play('USJ Spinner')
  </usj-button>
 </div>
 `
-  })
+  }))

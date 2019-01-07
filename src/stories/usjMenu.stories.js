@@ -1,16 +1,18 @@
-import { play } from 'vue-play'
 import Vue from 'vue'
 
-import usjMenu from './index'
-import usjList from '../usjList'
-import usjBackdrop from '../usjBackdrop'
+import usjMenu from '../components/usjMenu/index'
+import usjList from '../components/usjList'
+import usjBackdrop from '../components/usjBackdrop'
+import {
+  storiesOf
+} from '@storybook/vue';
 
 Vue.use(usjMenu)
 Vue.use(usjList)
 Vue.use(usjBackdrop)
 
-play('USJ Menu')
-  .add('basic', {
+storiesOf('USJ Menu', module)
+  .add('basic', () => ({
     template: `
       <usj-menu>
       <usj-button usj-menu-trigger>Button</usj-button>
@@ -22,4 +24,4 @@ play('USJ Menu')
 </usj-menu-content>
 </usj-menu>
     `
-  })
+  }))

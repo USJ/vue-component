@@ -1,16 +1,18 @@
-import { play } from 'vue-play'
 import Vue from 'vue'
 
-import usjSelect from './index'
-import usjMenu from '../usjMenu'
-import usjInputContainer from '../usjInputContainer'
+import usjSelect from '../components/usjSelect/index'
+import usjMenu from '../components/usjMenu'
+import usjInputContainer from '../components/usjInputContainer'
+import {
+  storiesOf
+} from '@storybook/vue';
 
 Vue.use(usjSelect)
 Vue.use(usjMenu)
 Vue.use(usjInputContainer)
 
-play('USJ Select')
-  .add('basic', {
+storiesOf('USJ Select', module)
+  .add('basic', () => ({
     template: `
 <usj-input-container>
   <label>Country</label>
@@ -19,8 +21,8 @@ play('USJ Select')
   </usj-select>
 </usj-input-container>
     `
-  })
-  .add('multiple', {
+  }))
+  .add('multiple', () => ({
     data() {
       return {
         selected: []
@@ -35,4 +37,4 @@ play('USJ Select')
   </usj-select>
 </usj-input-container>
     `
-  })
+  }))

@@ -1,15 +1,19 @@
-
 import Vue from 'vue'
-import { play } from 'vue-play'
 
-import usjCheckbox from './index'
+
+import usjCheckbox from '../components/usjCheckbox/index'
+import {
+  storiesOf
+} from '@storybook/vue';
 
 Vue.use(usjCheckbox)
 
-play('USJ Checkbox')
-  .add('multiple', {
-    data () {
-      return { sampleData: [] }
+storiesOf('USJ Checkbox', module)
+  .add('multiple', () => ({
+    data() {
+      return {
+        sampleData: []
+      }
     },
     template: `
 <div>
@@ -21,4 +25,4 @@ play('USJ Checkbox')
 </div>
       
     `
-  })
+  }))

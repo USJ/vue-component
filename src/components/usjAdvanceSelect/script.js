@@ -282,7 +282,7 @@ const usjAdvanceSelect = {
         }
 
         if (this.fetchFunction) {
-          if (!this.value instanceof Object) {
+          if (!(this.value instanceof Object)) {
             console.error(
               'fetchFunction cannot be used without `v-model` as object'
             )

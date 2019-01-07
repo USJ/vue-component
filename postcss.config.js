@@ -4,7 +4,6 @@ module.exports = ctx => {
       require('postcss-import')({
         path: [ctx.cwd + '/src']
       }),
-      require('postcss-nested')(ctx.plugin),
       require('postcss-cssnext')(ctx.plugin),
       require('postcss-color-function')(ctx.plugin),
       require('postcss-media-minmax')(ctx.plugin),

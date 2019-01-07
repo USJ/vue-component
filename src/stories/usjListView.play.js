@@ -1,26 +1,32 @@
-
-import { play } from 'vue-play'
 import Vue from 'vue'
-import usjListView from './index'
-import { range } from 'lodash'
+import usjListView from '../components/usjListView/index'
+import {
+  range
+} from 'lodash'
+import {
+  storiesOf
+} from '@storybook/vue';
 
 Vue.use(usjListView)
 
-function sampleItems () {
+function sampleItems() {
   return range(1, 20).map(i => {
-    return { id: i, title: 'Subject ID #' + i }
+    return {
+      id: i,
+      title: 'Subject ID #' + i
+    }
   })
 }
 
-play('USJ ListView')
-  .add('basic', {
-    data () {
+storiesOf('USJ ListView', module)
+  .add('basic', () => ({
+    data() {
       return {
         sampleItems
       }
     },
     methods: {
-      goToItem (data) {
+      goToItem(data) {
         this.$log(data)
       }
     },
@@ -42,22 +48,22 @@ play('USJ ListView')
   </usj-list-view-details>
 </usj-list-view>
     `
-  })
+  }))
 
-  .add('has actions', {
-    data () {
+  .add('has actions', () => ({
+    data() {
       return {
         sampleItems
       }
     },
     methods: {
-      goToItem (data) {
+      goToItem(data) {
         this.$log(data)
       },
-      localLog () {
+      localLog() {
         this.$log('local log')
       },
-      detailsLog () {
+      detailsLog() {
         this.$log('Click details actions')
       }
     },
@@ -87,4 +93,4 @@ play('USJ ListView')
   </usj-list-view-details>
 </usj-list-view>
     `
-  })
+  }))

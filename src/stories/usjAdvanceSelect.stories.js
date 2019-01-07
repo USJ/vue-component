@@ -1,31 +1,41 @@
-import { play } from 'vue-play'
 import Vue from 'vue'
-import { range } from 'lodash'
+import {
+  range
+} from 'lodash'
 
-import Select from './index.js'
-import usjIcon from '../usjIcon'
-import usjInputContainer from '../usjInputContainer'
+import {
+  storiesOf
+} from '@storybook/vue'
+
+import {
+  action
+} from '@storybook/addon-actions'
+
+import Select from '../components/usjAdvanceSelect/index.js'
+import usjIcon from '../components/usjIcon'
+import usjInputContainer from '../components/usjInputContainer'
 Vue.use(usjInputContainer)
 Vue.use(Select)
 Vue.use(usjIcon)
 
-play('USJ Advance Select')
-  .add('Basic single select (disabled)', {
+storiesOf('USJ Advance Select', module)
+  .add('Basic single select (disabled)', () => ({
     template: `
     <usj-input-container>
     <usj-advance-select :options="sampleOptions" disabled></usj-advance-select>
     </usj-input-container>
     `,
-    data () {
+    data() {
       return {
-        sampleOptions: [
-          { label: 'Option 1', value: 'Option 1' }
-        ]
+        sampleOptions: [{
+          label: 'Option 1',
+          value: 'Option 1'
+        }]
       }
     }
-  })
+  }))
 
-  .add('Basic single select', {
+  .add('Basic single select', () => ({
     template: `
 <div>
 <usj-input-container>
@@ -36,17 +46,20 @@ play('USJ Advance Select')
     V-Model: {{ sampleValue }}
 </div>
     `,
-    data () {
-      const options = range(1, 10).map(idx => ({ label: `Option Label ${idx}`, value: `Option Value ${idx}` }))
+    data() {
+      const options = range(1, 10).map(idx => ({
+        label: `Option Label ${idx}`,
+        value: `Option Value ${idx}`
+      }))
 
       return {
         sampleValue: options[2].value,
         sampleOptions: options
       }
     }
-  })
+  }))
 
-  .add('Multiple select', {
+  .add('Multiple select', () => ({
     template: `
 <div>
 <usj-input-container>
@@ -63,17 +76,20 @@ play('USJ Advance Select')
     V-Model: {{ sampleValue }}
 </div>
     `,
-    data () {
-      const options = range(1, 10).map(idx => ({ label: `Option Label ${idx}`, value: `Option Value ${idx}` }))
+    data() {
+      const options = range(1, 10).map(idx => ({
+        label: `Option Label ${idx}`,
+        value: `Option Value ${idx}`
+      }))
 
       return {
-        sampleValue: [ options[0].value, options[1].value ],
+        sampleValue: [options[0].value, options[1].value],
         sampleOptions: options
       }
     }
-  })
+  }))
 
-  .add('Async select (custom template)', {
+  .add('Async select (custom template)', () => ({
     template: `
     <div>
     <usj-input-container>
@@ -96,8 +112,11 @@ play('USJ Advance Select')
         v-model: {{ sampleValue2 }}
     </div>
     `,
-    data () {
-      const asyncOptions = range(1, 10).map(idx => ({ id: `${idx}`, username: `User ${idx}` }))
+    data() {
+      const asyncOptions = range(1, 10).map(idx => ({
+        id: `${idx}`,
+        username: `User ${idx}`
+      }))
 
       return {
         sampleValue: asyncOptions[0],
@@ -106,7 +125,7 @@ play('USJ Advance Select')
       }
     },
     methods: {
-      fetchFunction (data) {
+      fetchFunction(data) {
         this.$log('fetch with data ' + data)
         return new Promise((resolve, reject) => {
           let items = this.sampleOptions
@@ -115,21 +134,26 @@ play('USJ Advance Select')
         })
       }
     }
-  })
+  }))
 
-  .add('Async multiple select (custom template)', {
+  .add('Async multiple select (custom template)', () => ({
     template: `
     <div>
+      <usj-input-container>
       <usj-advance-select :fetch-function="fetchFunction" searchable multiple v-model="sampleValue">
         <template scope="user">
           {{ user.username }}
         </template>
       </usj-advance-select>
+      < /usj-input-container>
         v-model: {{ sampleValue }}
     </div>
     `,
-    data () {
-      const asyncOptions = range(1, 10).map(idx => ({ id: `${idx}`, username: `User ${idx}` }))
+    data() {
+      const asyncOptions = range(1, 10).map(idx => ({
+        id: `${idx}`,
+        username: `User ${idx}`
+      }))
 
       return {
         sampleValue: [asyncOptions[0], asyncOptions[1]],
@@ -137,7 +161,7 @@ play('USJ Advance Select')
       }
     },
     methods: {
-      fetchFunction (data) {
+      fetchFunction(data) {
         return new Promise((resolve, reject) => {
           let items = this.sampleOptions
 
@@ -145,8 +169,8 @@ play('USJ Advance Select')
         })
       }
     }
-  })
-  .add('Emit only select', {
+  }))
+  .add('Emit only select', () => ({
     template: `
 <div>
 <usj-input-container>
@@ -154,18 +178,17 @@ play('USJ Advance Select')
 </usj-input-container>
 </div>
     `,
-    data () {
+    data() {
       return {
-        sampleOptions: [
-          { label: 'Option 1', value: 'Option 1' }
-        ]
+        sampleOptions: [{
+          label: 'Option 1',
+          value: 'Option 1'
+        }]
       }
     },
     methods: {
-      handleSelect (val) {
+      handleSelect(val) {
         this.$log(val)
       }
-    } 
-  })
-
-
+    }
+  }))

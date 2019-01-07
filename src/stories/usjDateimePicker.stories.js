@@ -1,14 +1,17 @@
-import usjDatetimePicker from './index'
-import usjInput from '../usjInputContainer'
+import usjDatetimePicker from '../components/usjDatetimePicker/index'
+import usjInput from '../components/usjInputContainer'
 
 import Vue from 'vue'
-import { play } from 'vue-play'
+
+import {
+  storiesOf
+} from '@storybook/vue';
 
 Vue.use(usjDatetimePicker)
 Vue.use(usjInput)
 
-play('USJ Datetime Picker')
-  .add('basic', {
+storiesOf('USJ Datetime Picker', module)
+  .add('basic', () => ({
     template: `
       <div>
         <usj-input-container>
@@ -20,12 +23,17 @@ play('USJ Datetime Picker')
         </usj-input-container>
       </div>
     `,
-    data () {
-      return { sampleDate: new Date(), config: {enableTime: true} }
+    data() {
+      return {
+        sampleDate: new Date(),
+        config: {
+          enableTime: true
+        }
+      }
     },
     watch: {
-      sampleDate (newValue) {
+      sampleDate(newValue) {
         this.$log(newValue)
       }
     }
-  })
+  }))

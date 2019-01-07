@@ -1,13 +1,15 @@
-import { play } from 'vue-play'
-import usjDropdown from './index.js'
-import usjButton from '../usjButton'
+import usjDropdown from '../components/usjDropdown/index.js'
+import usjButton from '../components/usjButton'
 import Vue from 'vue'
+import {
+  storiesOf
+} from '@storybook/vue';
 
 Vue.use(usjDropdown)
 Vue.use(usjButton)
 
-play('USJ Dropdown')
-  .add('basic', {
+storiesOf('USJ Dropdown', module)
+  .add('basic', () => ({
     template: `
 <usj-dropdown>
   <usj-dropdown-button>Button</usj-dropdown-button>
@@ -20,4 +22,4 @@ play('USJ Dropdown')
   </usj-dropdown-menu>
 </usj-dropdown>
 `
-  })
+  }))

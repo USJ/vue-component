@@ -1,12 +1,14 @@
-import { play } from 'vue-play'
 import Vue from 'vue'
 
-import usjDialog from './index'
+import usjDialog from '../components/usjDialog/index'
+import {
+  storiesOf
+} from '@storybook/vue';
 
 Vue.use(usjDialog)
 
-play('USJ Dialog')
-  .add('basic', {
+storiesOf('USJ Dialog', module)
+  .add('basic', () => ({
     template: `
     <div>
       <usj-button @click="$refs['dialog'].open()">dialog</usj-button>
@@ -22,4 +24,4 @@ play('USJ Dialog')
       </usj-dialog>
     </div>
     `
-  })
+  }))

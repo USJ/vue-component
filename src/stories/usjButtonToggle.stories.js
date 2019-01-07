@@ -1,13 +1,15 @@
-import { play } from 'vue-play'
-import usjButtonToggle from './index.js'
-import usjIcon from '../usjIcon'
+import usjButtonToggle from '../components/usjButtonToggle/index.js'
+import usjIcon from '../components/usjIcon'
 import Vue from 'vue'
+import {
+  storiesOf
+} from '@storybook/vue';
 
 Vue.use(usjButtonToggle)
 Vue.use(usjIcon)
 
-play('USJ Button Toggle')
-  .add('basic', {
+storiesOf('USJ Button Toggle', module)
+  .add('basic', () => ({
     template: `
 <usj-button-toggle>
   <usj-button class="usj-icon-button">
@@ -24,9 +26,9 @@ play('USJ Button Toggle')
   </usj-button>
 </usj-button-toggle>
 `
-  })
+  }))
 
-  .add('single', {
+  .add('single', () => ({
     template: `
 <usj-button-toggle usj-single>
   <usj-button class="usj-icon-button">
@@ -43,10 +45,10 @@ play('USJ Button Toggle')
   </usj-button>
 </usj-button-toggle>
 `
-  })
+  }))
 
-  .add('model binding - single', {
-    data () {
+  .add('model binding - single', () => ({
+    data() {
       return {
         modelValue: {}
       }
@@ -71,10 +73,10 @@ play('USJ Button Toggle')
 </section>
 
 `
-  })
+  }))
 
-  .add('model binding - multiple', {
-    data () {
+  .add('model binding - multiple', () => ({
+    data() {
       return {
         modelValue: {}
       }
@@ -99,4 +101,4 @@ play('USJ Button Toggle')
   </section>
   
   `
-})
+  }))

@@ -1,16 +1,20 @@
-import { play } from 'vue-play'
 import Vue from 'vue'
-import usjPage from './index'
-import usjListView from '../usjListView'
-import { range } from 'lodash'
+import usjPage from '../components/usjPage/index'
+import usjListView from '../components/usjListView'
+import {
+  range
+} from 'lodash'
+import {
+  storiesOf
+} from '@storybook/vue';
 
 Vue.use(usjPage)
 Vue.use(usjListView)
 
-play('USJ Page')
-  .add('basic', {
+storiesOf('USJ Page')
+  .add('basic', () => ({
     methods: {
-      range (start, finish) {
+      range(start, finish) {
         return range(start, finish)
       }
     },
@@ -35,4 +39,4 @@ play('USJ Page')
      </usj-page-footer>
   </usj-page>
     `
-  })
+  }))

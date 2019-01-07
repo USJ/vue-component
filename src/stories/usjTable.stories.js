@@ -1,14 +1,19 @@
-import usjTable from './index'
-import usjCheckbox from '../usjCheckbox'
+import usjTable from '../components/usjTable/index'
+import usjCheckbox from '../components/usjCheckbox'
 
 import Vue from 'vue'
-import {play} from 'vue-play'
-import { range } from 'lodash'
+
+import {
+  range
+} from 'lodash'
+import {
+  storiesOf
+} from '@storybook/vue';
 
 Vue.use(usjTable)
 Vue.use(usjCheckbox)
 
-function tableData () {
+function tableData() {
   const COL = 10
 
   let tableData = []
@@ -27,8 +32,8 @@ function tableData () {
   }
 }
 
-play('USJ Table')
-  .add('basic', {
+storiesOf('USJ Table', module)
+  .add('basic', () => ({
     template: `
  <usj-table>
     <usj-table-header>
@@ -43,12 +48,12 @@ play('USJ Table')
     </usj-table-body>
   </usj-table>
 `,
-    data () {
+    data() {
       return tableData()
     }
-  })
+  }))
 
-  .add('scroll', {
+  .add('scroll', () => ({
     template: `
 
 <div style="width:80%;">
@@ -67,12 +72,12 @@ play('USJ Table')
 </div>
  
     `,
-    data () {
+    data() {
       return tableData()
     }
-  })
+  }))
 
-  .add('select', {
+  .add('select', () => ({
     template: `
 
 <div style="width:80%;">
@@ -91,12 +96,12 @@ play('USJ Table')
 </div>
  
     `,
-    data () {
+    data() {
       return tableData()
     },
     methods: {
-      onSelect (value) {
+      onSelect(value) {
         this.$log(value)
       }
     }
-  })
+  }))

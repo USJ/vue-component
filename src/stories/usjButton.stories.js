@@ -1,21 +1,35 @@
-import { play } from 'vue-play'
+import {
+  storiesOf
+} from '@storybook/vue'
 
-import usjButton from './usjButton.vue'
-import usjIcon from '../usjIcon/usjIcon.vue'
+import {
+  action
+} from '@storybook/addon-actions'
 
-play('USJ Button')
-  .add('basic', {
-    components: { usjButton },
+import usjButton from '../components/usjButton/usjButton.vue'
+import usjIcon from '../components/usjIcon/usjIcon.vue'
+
+storiesOf('USJ Button', module)
+  .add('basic', () => ({
+    components: {
+      usjButton
+    },
+    methods: {
+      action: action('clicked')
+    },
     template: `
 <div>
 <usj-button class="usj-primary" :disabled="true">Primary Disabled button</usj-button>
 <usj-button :disabled="true">Default Disabled button</usj-button>
-<usj-button class="usj-button--raised usj-button--accent" @click="$log('Clicked !')">Click me</usj-button>
+<usj-button class="usj-button--raised usj-button--accent" @click="action">Click me</usj-button>
 </div>
     `
-  })
-  .add('icon button', {
-    components: { usjIcon, usjButton },
+  }))
+  .add('icon button', () => ({
+    components: {
+      usjIcon,
+      usjButton
+    },
     template: `
       <div>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -24,4 +38,4 @@ play('USJ Button')
       <p> Inverse <usj-button class="usj-icon-button usj-inverse"><usj-icon>home</usj-icon></usj-button></p>
       </div>
     `
-  })
+  }))

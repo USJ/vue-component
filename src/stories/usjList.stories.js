@@ -1,13 +1,15 @@
-import { play } from 'vue-play'
 import Vue from 'vue'
-import usjList from './index'
-import usjButton from '../usjButton'
+import usjList from '../components/usjList/index'
+import usjButton from '../components/usjButton'
+import {
+  storiesOf
+} from '@storybook/vue';
 
 Vue.use(usjList)
 Vue.use(usjButton)
 
-play('USJ List')
-  .add('basic, expandable', {
+storiesOf('USJ List', module)
+  .add('basic, expandable', () => ({
     template: `
 <div>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -28,4 +30,4 @@ play('USJ List')
       </usj-list>
 </div>
     `
-  })
+  }))

@@ -1,13 +1,18 @@
-import { play } from 'vue-play'
-import usjRadio from './index.js'
+import usjRadio from '../components/usjRadio/index.js'
 import Vue from 'vue'
+import {
+  storiesOf
+} from '@storybook/vue';
 
 Vue.use(usjRadio)
 
-play('USJ Radio')
-  .add('basic', {
-    data () {
-      return { radioValue: 'a', radioValue1: 'a' }
+storiesOf('USJ Radio')
+  .add('basic', () => ({
+    data() {
+      return {
+        radioValue: 'a',
+        radioValue1: 'a'
+      }
     },
     template: `
       <div>
@@ -17,4 +22,4 @@ play('USJ Radio')
         <usj-radio name="radio-choose" usj-value="b" v-model="radioValue1" :disabled="true">Radio B</usj-radio>
       </div>
     `
-  })
+  }))

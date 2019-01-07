@@ -1,12 +1,14 @@
-import { play } from 'vue-play'
 import Vue from 'vue'
 
-import usjLayout from './index'
+import usjLayout from '../components/usjLayout/index'
+import {
+  storiesOf
+} from '@storybook/vue';
 
 Vue.use(usjLayout)
 
-play('USJ Layout')
-  .add('basic', {
+storiesOf('USJ Layout', module)
+  .add('basic', () => ({
     template: `
 <div>
 <usj-layout :usj-gutter="16">
@@ -44,4 +46,4 @@ play('USJ Layout')
 </div>
     
     `
-  })
+  }))

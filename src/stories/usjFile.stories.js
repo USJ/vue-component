@@ -1,9 +1,11 @@
-
-import usjFile from './index'
-import usjIcon from '../usjIcon'
-import usjInputContainer from '../usjInputContainer'
+import usjFile from '../components/usjFile/index'
+import usjIcon from '../components/usjIcon'
+import usjInputContainer from '../components/usjInputContainer'
 import Vue from 'vue'
-import { play } from 'vue-play'
+
+import {
+  storiesOf
+} from '@storybook/vue';
 
 Vue.use(usjFile)
 Vue.use(usjIcon)
@@ -11,8 +13,8 @@ Vue.use(usjInputContainer)
 
 let updateProgress;
 
-play('USJ File')
-  .add('basic', {
+storiesOf('USJ File', module)
+  .add('basic', () => ({
     template: `
 <div>
   <usj-input-container>
@@ -21,11 +23,13 @@ play('USJ File')
   <pre>{{ sampleData }}</pre>
 </div>
     `,
-    data () {
-      return { sampleData: null }
+    data() {
+      return {
+        sampleData: null
+      }
     }
-  })
-  .add('progress', {
+  }))
+  .add('progress', () => ({
     template: `
     <div>
   <usj-input-container>
@@ -33,7 +37,7 @@ play('USJ File')
   </usj-input-container>
   </div>
     `,
-    data () {
+    data() {
       return {
         uploadProgress: 0,
         uploading: true,
@@ -41,14 +45,14 @@ play('USJ File')
       }
     },
     methods: {
-      selected (e) {
+      selected(e) {
         setInterval(updateProgress, 1000)
       }
     },
-    mounted () {
+    mounted() {
       updateProgress = () => {
         console.log(this.uploadProgress)
         this.uploadProgress++
       }
     }
-  })
+  }))

@@ -1,26 +1,29 @@
 <template>
-  <input type="text" :id="id"
-         :class="inputClass"
-         :name="name"
-         :placeholder="placeholder"
-         :required="required"
-         v-model="mutableValue"
-         @focus="onFocus"
-         @blur="onBlur"
-         :disabled="disabled"
-         data-input/>
+  <input
+    type="text"
+    :id="id"
+    :class="inputClass"
+    :name="name"
+    :placeholder="placeholder"
+    :required="required"
+    v-model="mutableValue"
+    @focus="onFocus"
+    @blur="onBlur"
+    :disabled="disabled"
+    data-input
+  >
 </template>
 
 <script>
 try {
-  var flatpickr = require('flatpickr').default
+  var flatpickr = require("flatpickr").default;
 } catch (er) {
-  flatpickr = null
+  flatpickr = null;
 }
 
 // import flatpickr from 'flatpickr'
-import getClosestVueParent from '../../core/utils/getClosestVueParent'
-import common from '../usjInputContainer/common'
+import getClosestVueParent from "../../core/utils/getClosestVueParent";
+import common from "../usjInputContainer/common";
 
 export default {
   mixins: [common],
@@ -32,10 +35,10 @@ export default {
         return (
           value === null ||
           value instanceof Date ||
-          typeof value === 'string' ||
+          typeof value === "string" ||
           value instanceof String ||
           value instanceof Array
-        )
+        );
       }
     },
     // https://chmln.github.io/flatpickr/options/
@@ -47,15 +50,15 @@ export default {
     },
     placeholder: {
       type: String,
-      default: ''
+      default: ""
     },
     inputClass: {
       type: [String, Object],
-      default: 'form-control input'
+      default: "form-control input"
     },
     name: {
       type: String,
-      default: 'date-time'
+      default: "date-time"
     },
     required: {
       type: Boolean,
@@ -77,59 +80,59 @@ export default {
     return {
       mutableValue: this.value,
       fp: null
-    }
+    };
   },
   methods: {
-    handleChange (val) {
-      let value
-      
-      if (!this.config.mode || this.config.mode === 'single') {
-        value = this.fp.selectedDates[0]
+    handleChange(val) {
+      let value;
+
+      if (!this.config.mode || this.config.mode === "single") {
+        value = this.fp.selectedDates[0];
       } else {
-        value = this.fp.selectedDates
+        value = this.fp.selectedDates;
       }
-      
-      this.updateValues(value)
-      this.$emit('change', value)
-      this.$emit('input', value)
+
+      this.updateValues(value);
+      this.$emit("change", value);
+      this.$emit("input", value);
     }
   },
   mounted() {
     if (!flatpickr) {
-      throw "'flatpickr' is required for usjDatetimePicker component"
+      throw "'flatpickr' is required for usjDatetimePicker component";
     }
 
     // Load flatPickr if not loaded yet
     if (!this.fp) {
-      this.config.onChange = this.handleChange
+      this.config.onChange = this.handleChange;
       // Bind on parent element if wrap is true
-      let elem = this.config.wrap ? this.$el.parentNode : this.$el
-      this.fp = flatpickr(elem, this.config)
+      let elem = this.config.wrap ? this.$el.parentNode : this.$el;
+      this.fp = flatpickr(elem, this.config);
     }
 
     this.$nextTick(() => {
       this.parentContainer = getClosestVueParent(
         this.$parent,
-        'usj-input-container'
-      )
+        "usj-input-container"
+      );
       if (!this.parentContainer) {
-        this.$destroy()
+        this.$destroy();
         throw new Error(
-          'You should wrap the usj-input in a usj-input-container'
-        )
+          "You should wrap the usj-input in a usj-input-container"
+        );
       }
-      this.setParentDisabled()
-      this.setParentRequired()
-      this.setParentPlaceholder()
-      this.handleMaxLength()
-      this.updateValues(this.value)
-    })
+      this.setParentDisabled();
+      this.setParentRequired();
+      this.setParentPlaceholder();
+      this.handleMaxLength();
+      this.updateValues(this.value);
+    });
   },
   beforeDestroy() {
     // Free up memory
     if (this.fp) {
-      this.fp.destroy()
-      this.fp = null
+      this.fp.destroy();
+      this.fp = null;
     }
   },
   watch: {
@@ -139,9 +142,9 @@ export default {
      * @param newConfig Object
      */
     config(newConfig) {
-      this.fp.config = Object.assign(this.fp.config, newConfig)
-      this.fp.redraw()
-      this.fp.setDate(this.value, true)
+      this.fp.config = Object.assign(this.fp.config, newConfig);
+      this.fp.redraw();
+      this.fp.setDate(this.value, true);
     },
     /**
      * Watch for value changed by date-picker itself and notify parent component
@@ -150,9 +153,9 @@ export default {
      */
     mutableValue(newValue) {
       if (this.asDate) {
-        this.$emit('input', this.fp.selectedDates[0])
+        this.$emit("input", this.fp.selectedDates[0]);
       } else {
-        this.$emit('input', newValue)
+        this.$emit("input", newValue);
       }
     },
     // /**
@@ -161,46 +164,9 @@ export default {
     //  * @param newValue
     //  */
     value(newValue) {
-      this.fp && this.fp.setDate(newValue, false)
+      this.fp && this.fp.setDate(newValue, false);
     }
-    // disabled (val) {
-    //   if (!this.fp) return;
-
-    //   if (val) {
-    //     this.fp._input.setAttribute('disabled', 'disabled')
-    //   } else {
-    //     this.fp._input.removeAttribute('disabled')
-    //   }
-    //   this.fp.config = Object.assign(this.fp.config, {'allowOpen': val})
-    //   this.fp.redraw()
-    // }
   }
-}
+};
 </script>
 
-<style lang="stylus">
-$calendarBackground = #fff
-$calendarBorderColor = alpha(#484848, 0.2)
-
-$monthForeground = #fff
-$monthBackground = #FF8A65
-
-$weekdaysBackground = #FF8A65
-
-$dayForeground = #484848
-$dayHoverBackground = #e2e2e2
-
-$todayColor = #bbb
-
-$selectedDayBackground = #FF8A65
-$selectedDayForeground = #fff
-
-$noCalendarBorder = true
-@require "../../../node_modules/flatpickr/src/style/flatpickr.styl"
-
-.usj-input-container.usj-input-disabled
-    cursor: not-allowed
-
-.usj-input-container.usj-input-disabled .flatpickr-input
-    cursor: not-allowed
-</style>
