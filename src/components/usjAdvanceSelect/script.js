@@ -196,9 +196,9 @@ const usjAdvanceSelect = {
       if (this.options.length > 0 && this.searchValue) {
         this.menuItems = this.options.filter(
           item =>
-            JSON.stringify(item)
-              .toLowerCase()
-              .indexOf(this.searchValue.toLowerCase()) > -1
+          JSON.stringify(item)
+          .toLowerCase()
+          .indexOf(this.searchValue.toLowerCase()) > -1
         )
       }
 
@@ -207,14 +207,14 @@ const usjAdvanceSelect = {
       }
     },
 
-    fetchMenuItems (searchValue) {
+    fetchMenuItems(searchValue) {
       this.loading = true
 
       this.fetchFunction(searchValue).then(data => {
         this.menuItems = data
         this.loading = false
       })
-    }, 
+    },
 
     handleInputFocus(e) {
       this.toggleMenuEl(true)
@@ -268,9 +268,7 @@ const usjAdvanceSelect = {
       // handle multiple
       if (this.multiple) {
         if (!Array.isArray(this.value)) {
-          console.error(
-            `v-model has to be Array for multiple, ${typeof this.value} given`
-          )
+          throw `v-model has to be Array for multiple, ${typeof this.value} given`
         }
 
         this.value.forEach(item => this.addItem(item))
@@ -283,9 +281,7 @@ const usjAdvanceSelect = {
 
         if (this.fetchFunction) {
           if (!(this.value instanceof Object)) {
-            console.error(
-              'fetchFunction cannot be used without `v-model` as object'
-            )
+            throw 'fetchFunction cannot be used without `v-model` as object'
           }
 
           this.doSelectItem(this.value)
@@ -297,9 +293,9 @@ const usjAdvanceSelect = {
         return this.multipleItems
       }
 
-      return this.isOptionObject(this.singleItem)
-        ? this.singleItem.value
-        : this.singleItem
+      return this.isOptionObject(this.singleItem) ?
+        this.singleItem.value :
+        this.singleItem
     },
     updateValue(value) {
       this.$emit('input', value)
@@ -311,8 +307,6 @@ const usjAdvanceSelect = {
     }
   },
   mounted() {
-    console.log('Mounted v-advs')
-
     if (this.options) {
       this.menuItems = this.options
     }
@@ -347,7 +341,7 @@ const usjAdvanceSelect = {
 
     vm = this
   },
-  created () {
+  created() {
     this.fetchMenuItems = debounce(this.fetchMenuItems, 1000)
   }
 }
