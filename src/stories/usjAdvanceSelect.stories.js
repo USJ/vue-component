@@ -145,7 +145,7 @@ storiesOf('USJ Advance Select', module)
           {{ user.username }}
         </template>
       </usj-advance-select>
-      < /usj-input-container>
+      </usj-input-container>
         v-model: {{ sampleValue }}
     </div>
     `,
