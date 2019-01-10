@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name vue-components src/components/index.js",
-    "test": "jest",
+    "test:unit": "vue-cli-service test:unit",
     "build-storybook": "build-storybook",
     "prebuild": "rimraf ./dist",
     "prepublishOnly": "npm run build",
@@ -22,14 +22,16 @@
   "devDependencies": {
     "@storybook/addon-actions": "^4.1.0",
     "@storybook/addon-links": "^4.1.0",
-    "@vue/cli-plugin-babel": "^3.2.0",
-    "@vue/cli-plugin-eslint": "^3.2.1",
-    "@vue/cli-plugin-unit-jest": "^3.2.0",
-    "@vue/cli-service": "^3.2.0",
+    "@vue/cli-plugin-babel": "^3.3.0",
+    "@vue/cli-plugin-eslint": "^3.3.0",
+    "@vue/cli-plugin-unit-jest": "^3.3.0",
+    "@vue/cli-service": "^3.3.0",
     "@vue/test-utils": "^1.0.0-beta.15",
     "ag-grid-vue": "16.0.0",
     "babel-loader": "^8.0.4",
     "flatpickr": "^4.5.2",
+    "jest-cli": "^23.6.0",
+    "jest-serializer-vue": "^2.0.2",
     "node-sass": "^4.11.0",
     "postcss-color-function": "4.0.1",
     "postcss-cssnext": "3.1.0",
@@ -44,6 +46,7 @@
     "stylus-loader": "3.0.1",
     "vue": "2.5.13",
     "vue-cli-plugin-storybook": "^0.5.0",
+    "vue-jest": "^3.0.2",
     "vue-template-compiler": "2.5.13"
   },
   "eslintConfig": {
