@@ -3,21 +3,21 @@
 ## How-to install
 
 ```
-yarn install
+npm install
 ```
 
 ## How-to develop
 
-Run vue-play to preview components
+Run storybook to preview components
 
 ```
-npm run play
+npm run storybook:serve
 ```
 
 ## How-to build
 
-Run bili.js to compile with Rollup JS
+Build with Vue CLI
 
 ```
-npm run bundle
+npm run build
 ```
