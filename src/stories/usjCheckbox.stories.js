@@ -20,9 +20,15 @@ storiesOf('USJ Checkbox', module)
   <usj-checkbox usj-value="test1" v-model="sampleData">Test 1</usj-checkbox>
    <usj-checkbox usj-value="test2" v-model="sampleData">Test 2</usj-checkbox>
   <usj-checkbox usj-value="test3" v-model="sampleData">Test 3</usj-checkbox>
-  
+
   <pre>{{ sampleData }}</pre>
 </div>
       
+    `
+  }))
+
+  .add('single', () => ({
+    template: `
+        <usj-checkbox :disabled="true" :value="true">Test 3</usj-checkbox>
     `
   }))

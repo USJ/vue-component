@@ -118,6 +118,11 @@
 }
 
 .usj-checkbox.usj-checked {
+  &.usj-disabled .usj-checkbox-container {
+    background: var(--usj-theme-grey);
+    border: 2px solid var(--usj-theme-grey);
+  }
+
   & .usj-checkbox-container {
     border: 2px solid var(--usj-theme-orange);
     background: var(--usj-theme-orange);
