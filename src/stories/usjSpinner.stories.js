@@ -25,3 +25,7 @@ storiesOf('USJ Spinner', module)
 </div>
 `
   }))
+
+  .add('spinner', () => ({
+    template: '<usj-spinner></usj-spinner>'
+  }))
